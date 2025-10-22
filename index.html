@@ -7,37 +7,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>Derivium</title>
+  <link rel="icon" href="/public/D.svg" type="image/svg+xml">
    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DJs0PdLX.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-chbKQSJx.css">
+  <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
 <body>
  
-  <!-- Navbar -->
-  <nav class="navbar">
+<!-- ========== NAVBAR START ========== -->
+   <nav class="navbar">
     <div class="logo">Derivium</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
+      <a href="/index.html">Home</a>
+      <a href="/src/pages/about.html">About</a>
+       <a href="/src/pages/contact.html">Contact</a>
     </div>
     <button class="learn-more">
       <span class="circle" aria-hidden="true">
         <span class="icon arrow"></span>
       </span>
-      <span class="button-text">Get Started</span>
+      <span class="button-text"><a href="/src/pages/getstarted.html">Get Started</a></span>
     </button>
   </nav>
+<!-- ========== NAVBAR END ========== -->
 
-  <!-- Hero Section -->
+<!-- ========== HERO SECTION START ========== -->
   <section class="hero">
     <div class="hero-content">
     <p class="tagline split-text">From Limits to 3D Graphs</p>
-    <p class="tagline split-text">Solve, Explore, Visualize</p>
+    <p class="tagline heroh2 split-text">Solve, Explore, Visualize</p>
     <p class="desc">Discover calculus in a new light. Solve limits, derivatives, and partial derivatives with ease, and bring equations to life through interactive graphs.</p>
     <button class="custom-btn">
       Get Started
@@ -102,8 +102,9 @@
   </div>
 </div>
 </section>
+<!-- ========== HERO SECTION END ========== -->
 
-  <!-- ========== FEATURES CARDS START ========== -->
+<!-- ========== FEATURES CARDS START ========== -->
 <section class="features-section">
   <h2 class="features-title">Features</h2>
   <p class="features-sub">
@@ -196,22 +197,95 @@
 </section>
 <!-- ========== FEATURES CARDS END ========== -->
 
-  <!-- Sponsors Section -->
-  <section class="sponsors">
-    <h2>Our Supporters</h2>
-    <div class="sponsor-logos">
-      <div class="sponsor">MathWorks</div>
-      <div class="sponsor">Wolfram</div>
-      <div class="sponsor">Desmos</div>
-      <div class="sponsor">GeoGebra</div>
+
+<!-- ========== SUPPORTERS SECTION START ========== -->
+  <section class="marquee-section">
+    <div class="marquee_header">Our Supporters</div>
+    
+    <div class="marquee">
+      <div class="marquee__inner line1">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/wolfram.com" alt="Wolfram" class="rounded">Wolfram Research</span>
+          <span><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png" alt="META">META</span>
+          <span><img src="https://p7.hiclipart.com/preview/8/502/432/google-logo-google-now-google-search-google-plus-thumbnail.jpg" alt="Google" class="rounded">Google</span>
+          <span><img src="https://toppng.com/uploads/preview/microsoft-logo-png-hd-11660471230b6nd5n6huh.png" alt="Microsoft">Microsoft</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line2">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/khanacademy.org" alt="Khan Academy" class="rounded">Khan Academy</span>
+          <span><img src="https://logo.clearbit.com/coursera.org" alt="Coursera">Coursera</span>
+          <span><img src="https://i.pinimg.com/736x/2a/62/c3/2a62c34e0d217a7aa14645ce114d84b3.jpg" alt="Open AI" class="rounded">Open AI</span>
+          <span><img src="https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg" alt="IBM">IBM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line3">
+        <div class="marquee__group">
+           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLfQkHROu3_juWEJ0_sSnsw0hIGDtoKNwVKQ&s" alt="UBIT">UBIT</span>
+          <span><img src="https://substackcdn.com/image/fetch/$s_!G1lk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg" alt="Apple" class="rounded">Apple</span>
+           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocgnR9Y_Aq33mYH-oARaN0iIEEb96TllMTQ&s" alt="Kaggle" class="rounded">Kaggle</span>
+          <span><img src="https://m.media-amazon.com/images/I/61Aea4purkL._UF894,1000_QL80_.jpg" alt="Stanford">Stanford</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line4">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/udemy.com" alt="Udemy" class="rounded">Udemy</span>
+          <span><img src="https://logo.clearbit.com/maplesoft.com" alt="MapleSoft">MapleSoft</span>
+          <span><img src="https://logo.clearbit.com/sap.com" alt="SAP">SAP</span>
+          <span><img src="https://logo.clearbit.com/tableau.com" alt="Tableau">Tableau</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line5">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/desmos.com" alt="Desmos" class="rounded">Desmos</span>
+          <span><img src="https://logo.clearbit.com/sas.com" alt="SAS">SAS</span>
+          <span><img src="https://blog.adobe.com/en/publish/2020/05/28/media_1d87bf78b1ce19defbef0c7858b4df696215a4048.png?width=750&format=png&optimize=medium" alt="Adobe">Adobe</span>
+          <span><img src="https://cdn.discordapp.com/icons/1316298752734134323/d1ca85f01e187eca72de82cf141d9efc.png?size=160&amp;quality=lossless" alt="Bad Boy'z">Bad Boy'z</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line6">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/geogebra.org" alt="GeoGebra" class="rounded">GeoGebra</span>
+          <span><img src="https://logo.clearbit.com/oracle.com" alt="Oracle">Oracle</span>
+          <span><img src="https://logo.clearbit.com/duolingo.com" alt="Duolingo" class="rounded">Duolingo</span>
+          <span><img src="https://logo.clearbit.com/wiley.com" alt="Wiley">Wiley</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line7">
+        <div class="marquee__group">
+          <span><img src="https://yt3.googleusercontent.com/wtghMyEvmRZ9OSYmFjCN2Hk_4NsENwd6Kmau6k7n0in73FBvyEWpu6W4jDn8MWstLDh11FE8=s900-c-k-c0x00ffffff-no-rj" alt="edX">edX</span>
+          <span><img src="https://logo.clearbit.com/mathworks.com" alt="MathWorks">MathWorks</span>
+           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPW8v3fEXd2cAiPi5EmPK5Hf83FlA6UtNaXw&s" alt="Springer">Springer</span>
+          <span><img src="https://apk4free.net/wp-content/uploads/2024/05/brilliant.png" alt="Brilliant">Brilliant.org</span>
+        </div>
+      </div>
     </div>
   </section>
+<!-- ========== SUPPORTERS SECTION END ========== -->
 
-  <!-- Footer -->
+<!-- ========== FOOTER START ========== -->
   <footer>
     <!-- Logo + Tagline -->
     <div class="footer-top">
-      <img src="https://www.floatui.com/logo.svg" alt="Derivium Logo" class="footer-logo">
+      <img src="/public/Derivium Logo.svg" alt="Derivium Logo" class="footer-logo">
       <p class="footer-tagline">Powerful Calculations • Clean Visuals • Great Results</p>
     </div>
 
@@ -264,6 +338,9 @@
       </div>
     </div>
   </footer>
-  
+<!-- ========== FOOTER END ========== -->
+
+<!-- ========== JAVSACRIPT CDN/SCRIPTS ========== -->  
+  <script type="module" src="/src/assets/js/script.js"></script>
 </body>
 </html>
