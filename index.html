@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Derivium</title>
+  <link rel="icon" href="/public/D.svg" type="image/svg+xml">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/assets/css/style.css">
+</head>
+<body>
+ 
+<!-- ========== NAVBAR START ========== -->
+   <nav class="navbar">
+    <div class="logo">Derivium</div>
+    <div class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/src/pages/about.html">About</a>
+       <a href="/src/pages/contact.html">Contact</a>
+    </div>
+    <button class="learn-more">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text"><a href="/src/pages/getstarted.html">Get Started</a></span>
+    </button>
+  </nav>
+<!-- ========== NAVBAR END ========== -->
+
+<!-- ========== HERO SECTION START ========== -->
+  <section class="hero">
+    <div class="hero-content">
+    <p class="tagline split-text">From Limits to 3D Graphs</p>
+    <p class="tagline heroh2 split-text">Solve, Explore, Visualize</p>
+    <p class="desc">Discover calculus in a new light. Solve limits, derivatives, and partial derivatives with ease, and bring equations to life through interactive graphs.</p>
+    <button class="custom-btn"><a href="src/pages/getstarted.html">Get Started</a>
+    <span class="btn-before"></span>
+    <span class="btn-after"></span>
+  </button>
+  </div>
+  <canvas id="symbolCanvas"></canvas>
+  
+  <!-- Cube --> 
+<div class="container">
+  <div class="cube">
+    <div style="--x:-1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:0; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+  </div>
+  <div class="cube">
+    <div style="--x:-1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:0; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+  </div>
+  <div class="cube">
+    <div style="--x:-1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:0; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+  </div>
+</div>
+</section>
+<!-- ========== HERO SECTION END ========== -->
+
+<!-- ========== FEATURES CARDS START ========== -->
+<section class="features-section">
+  <h2 class="features-title">Features</h2>
+  <p class="features-sub">
+    Derivium simplifies calculus: from limits and derivatives to
+    interactive 2D/3D visualizations.
+  </p>
+
+  <div class="cards-grid">
+    <!-- Card 01 -->
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__glow"></div>
+
+        <div class="card__content">
+          <div class="card__badge">FEATURE</div>
+          <div class="card__image" style="--icon-color:#06b6d4;">
+            <span class="card-icon">∞</span>
+          </div>
+          <div class="card__text">
+            <p class="card__title">Limits</p>
+            <p class="card__description">Calculate limits with precision across different types and cases.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 02 -->
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__glow"></div>
+
+        <div class="card__content">
+          <div class="card__badge">FEATURE</div>
+          <div class="card__image" style="--icon-color:#7c3aed;">
+            <span class="card-icon">∂</span>
+          </div>
+          <div class="card__text">
+            <p class="card__title">Derivatives</p>
+            <p class="card__description">Supports partial, total, and higher-order derivatives seamlessly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 03 -->
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__glow"></div>
+
+        <div class="card__content">
+          <div class="card__badge">FEATURE</div>
+          <div class="card__image" style="--icon-color:#10b981;">
+            <span class="card-icon">📈</span>
+          </div>
+          <div class="card__text">
+            <p class="card__title">2D Graphs</p>
+            <p class="card__description">Generate smooth and accurate 2D graphs for functions and equations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 04 -->
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__glow"></div>
+
+        <div class="card__content">
+          <div class="card__badge">FEATURE</div>
+          <div class="card__image" style="--icon-color:#60a5fa;">
+            <span class="card-icon">🌐</span>
+          </div>
+          <div class="card__text">
+            <p class="card__title">3D Graphs</p>
+            <p class="card__description">Visualize complex functions in interactive and detailed 3D graphs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ========== FEATURES CARDS END ========== -->
+
+
+<!-- ========== SUPPORTERS SECTION START ========== -->
+  <section class="marquee-section">
+    <div class="marquee_header">Our Supporters</div>
+    
+    <div class="marquee">
+      <div class="marquee__inner line1">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/wolfram.com" alt="Wolfram" class="rounded">Wolfram Research</span>
+          <span><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png" alt="META">META</span>
+          <span><img src="https://p7.hiclipart.com/preview/8/502/432/google-logo-google-now-google-search-google-plus-thumbnail.jpg" alt="Google" class="rounded">Google</span>
+          <span><img src="https://toppng.com/uploads/preview/microsoft-logo-png-hd-11660471230b6nd5n6huh.png" alt="Microsoft">Microsoft</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line2">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/khanacademy.org" alt="Khan Academy" class="rounded">Khan Academy</span>
+          <span><img src="https://logo.clearbit.com/coursera.org" alt="Coursera">Coursera</span>
+          <span><img src="https://i.pinimg.com/736x/2a/62/c3/2a62c34e0d217a7aa14645ce114d84b3.jpg" alt="Open AI" class="rounded">Open AI</span>
+          <span><img src="https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg" alt="IBM">IBM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line3">
+        <div class="marquee__group">
+           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLfQkHROu3_juWEJ0_sSnsw0hIGDtoKNwVKQ&s" alt="UBIT">UBIT</span>
+          <span><img src="https://substackcdn.com/image/fetch/$s_!G1lk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg" alt="Apple" class="rounded">Apple</span>
+           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocgnR9Y_Aq33mYH-oARaN0iIEEb96TllMTQ&s" alt="Kaggle" class="rounded">Kaggle</span>
+          <span><img src="https://m.media-amazon.com/images/I/61Aea4purkL._UF894,1000_QL80_.jpg" alt="Stanford">Stanford</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line4">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/udemy.com" alt="Udemy" class="rounded">Udemy</span>
+          <span><img src="https://logo.clearbit.com/maplesoft.com" alt="MapleSoft">MapleSoft</span>
+          <span><img src="https://logo.clearbit.com/sap.com" alt="SAP">SAP</span>
+          <span><img src="https://logo.clearbit.com/tableau.com" alt="Tableau">Tableau</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line5">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/desmos.com" alt="Desmos" class="rounded">Desmos</span>
+          <span><img src="https://logo.clearbit.com/sas.com" alt="SAS">SAS</span>
+          <span><img src="https://blog.adobe.com/en/publish/2020/05/28/media_1d87bf78b1ce19defbef0c7858b4df696215a4048.png?width=750&format=png&optimize=medium" alt="Adobe">Adobe</span>
+          <span><img src="https://cdn.discordapp.com/icons/1316298752734134323/d1ca85f01e187eca72de82cf141d9efc.png?size=160&amp;quality=lossless" alt="Bad Boy'z">Bad Boy'z</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line6">
+        <div class="marquee__group">
+          <span><img src="https://logo.clearbit.com/geogebra.org" alt="GeoGebra" class="rounded">GeoGebra</span>
+          <span><img src="https://logo.clearbit.com/oracle.com" alt="Oracle">Oracle</span>
+          <span><img src="https://logo.clearbit.com/duolingo.com" alt="Duolingo" class="rounded">Duolingo</span>
+          <span><img src="https://logo.clearbit.com/wiley.com" alt="Wiley">Wiley</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__inner line7">
+        <div class="marquee__group">
+          <span><img src="https://yt3.googleusercontent.com/wtghMyEvmRZ9OSYmFjCN2Hk_4NsENwd6Kmau6k7n0in73FBvyEWpu6W4jDn8MWstLDh11FE8=s900-c-k-c0x00ffffff-no-rj" alt="edX">edX</span>
+          <span><img src="https://logo.clearbit.com/mathworks.com" alt="MathWorks">MathWorks</span>
+           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPW8v3fEXd2cAiPi5EmPK5Hf83FlA6UtNaXw&s" alt="Springer">Springer</span>
+          <span><img src="https://apk4free.net/wp-content/uploads/2024/05/brilliant.png" alt="Brilliant">Brilliant.org</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ========== SUPPORTERS SECTION END ========== -->
+
+<!-- ========== FOOTER START ========== -->
+  <footer>
+    <!-- Logo + Tagline -->
+    <div class="footer-top">
+      <img src="/public/Derivium Logo.svg" alt="Derivium Logo" class="footer-logo">
+      <p class="footer-tagline">Powerful Calculations • Clean Visuals • Great Results</p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <a href="https://github.com/TahaHassan-code/Derivium" target="_blank" class="social-btn github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-2.9.3-5.2-1.3-5.2-3.6
+          0-2 2.3-3.6 5.2-3.6 2.9-.3 5.2 1.3 5.2 3.6zm-33.8-10.8c-.7
+          2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2 3.6-2.9
+          6.5-2 2.9.7 4.9 2.9 4.2 4.9zm45.1-1.7c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
+          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm65.4
+          37.1c-8.1 0-14.6-6.2-14.6-14.6s6.5-14.6
+          14.6-14.6c8.1 0 14.6 6.2 14.6 14.6s-6.5 14.6-14.6
+          14.6zm82.8-44.2c-.7 2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2
+          3.6-2.9 6.5-2 2.9.7 4.9 2.9 4.2 4.9zm37.1 6.9c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
+          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm32.6-21.6c-2.9
+          0-5.2-2-5.2-4.9s2.3-4.9 5.2-4.9c2.9 0 5.2 2 5.2
+          4.9s-2.3 4.9-5.2 4.9zM248 8C111 8 0 119.1 0 256c0
+          110.9 71.7 205.1 171.3 238.4 12.8 2.3 17.4-5.5
+          17.4-12.2 0-6.2-.3-22.5-.3-44.2-70.1
+          15.2-84.9-33.9-84.9-33.9-11.6-29.6-28.4-37.4-28.4-37.4-23.2-15.9
+          1.7-15.6 1.7-15.6 25.8 1.7 39.4 26.5 39.4
+          26.5 22.9 39.4 59.8 28.1 74.4 21.5 2.3-16.5 8.8-28.1
+          16.2-34.7-55.9-6.2-114.6-28.1-114.6-124.9
+          0-27.4 9.7-49.9 25.8-67.5-2.6-6.2-11.2-31.3
+          2.6-65.1 0 0 21.2-6.8 69.1 26.1
+          20.3-5.5 41.7-8.4 63-8.4s42.7 2.9
+          63 8.4c47.9-33.2 69.1-26.1
+          69.1-26.1 13.8 33.9 5.2 58.9
+          2.6 65.1 16.2 17.7 25.8 40.1
+          25.8 67.5 0 97.1-59.1 118.4-115.5
+          124.6 9.1 7.8 17.1 23.2 17.1
+          47.1 0 34.1-.3 61.6-.3 69.8 0
+          6.8 4.6 14.6 17.4 12.2C424.3
+          461.1 496 366.9 496 256
+          496 119.1 385 8 248 8z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p >&copy; 2025 Derivium. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">License</a>
+        <a href="#">Privacy</a>
+        <a href="#">About Us</a>
+      </div>
+    </div>
+  </footer>
+<!-- ========== FOOTER END ========== -->
+
+<!-- ========== JAVSACRIPT CDN/SCRIPTS ========== -->  
+  <script type="module" src="/src/assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Derivium</title>
+  <link rel="icon" href="/public/D.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/assets/css/style.css">
+</head>
+<body>
+ 
+<!-- ========== NAVBAR START ========== -->
+    <nav class="navbar">
+    <div class="logo">Derivium</div>
+    <div class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/src/pages/about.html">About</a>
+       <a href="/src/pages/contact.html">Contact</a>
+    </div>
+    <button class="learn-more">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text"><a href="/src/pages/getstarted.html">Get Started</a></span>
+    </button>
+  </nav>
+<!-- ========== NAVBAR END ========== -->
+
+<!-- ========== HERO SECTION START ========== -->
+  <section class="hero">
+    <div class="hero-content">
+    <p class="tagline split-text">3D Graphs</p>
+    <p class="desc">3D Graphs represent complex mathematical relationships in three dimensions, helping visualize depth, surfaces, and volumes.</p>
+    
+    <!-- Scroll Down Arrow-->
+    <div class="scrolldown" style="--color: skyblue">
+      <div class="chevrons">
+        <div class="chevrondown"></div>
+        <div class="chevrondown"></div>
+      </div>
+    </div>
+  </div>
+  <canvas id="symbolCanvas"></canvas>
+  
+  <svg class="svganimation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" style="background-color: #1e1e1e; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);">
+  <!-- Definitions for gradients -->
+  <defs>
+    <linearGradient id="surfaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9c27b0;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#e1bee7;stop-opacity:0.6"/>
+    </linearGradient>
+    <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 3D Axes -->
+  <!-- X-axis (angled for perspective) -->
+  <line x1="100" y1="300" x2="300" y2="200" stroke="lightgray" stroke-width="2"/>
+  <!-- Y-axis -->
+  <line x1="100" y1="300" x2="200" y2="350" stroke="lightgray" stroke-width="2"/>
+  <!-- Z-axis (vertical) -->
+  <line x1="100" y1="300" x2="100" y2="100" stroke="lightgray" stroke-width="2"/>
+
+  <!-- Axis Labels -->
+  <text x="310" y="200" fill="white" font-size="14" font-family="Poppins, sans-serif">x</text>
+  <text x="210" y="360" fill="white" font-size="14" font-family="Poppins, sans-serif">y</text>
+  <text x="90" y="90" fill="white" font-size="14" font-family="Poppins, sans-serif">z</text>
+
+  <!-- Axis Ticks and Labels -->
+  <!-- X-axis ticks -->
+  <line x1="150" y1="275" x2="150" y2="270" stroke="white" stroke-width="1"/>
+  <text x="150" y="290" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="middle">-1</text>
+  <line x1="200" y1="250" x2="200" y2="245" stroke="white" stroke-width="1"/>
+  <text x="200" y="265" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="middle">0</text>
+  <line x1="250" y1="225" x2="250" y2="220" stroke="white" stroke-width="1"/>
+  <text x="250" y="240" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="middle">1</text>
+  <!-- Y-axis ticks -->
+  <line x1="125" y1="312.5" x2="130" y2="310" stroke="white" stroke-width="1"/>
+  <text x="135" y="315" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="start">-1</text>
+  <line x1="150" y1="325" x2="155" y2="322.5" stroke="white" stroke-width="1"/>
+  <text x="160" y="330" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="start">0</text>
+  <line x1="175" y1="337.5" x2="180" y2="335" stroke="white" stroke-width="1"/>
+  <text x="185" y="345" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="start">1</text>
+  <!-- Z-axis ticks -->
+  <line x1="95" y1="250" x2="100" y2="250" stroke="white" stroke-width="1"/>
+  <text x="85" y="255" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="end">1</text>
+  <line x1="95" y1="200" x2="100" y2="200" stroke="white" stroke-width="1"/>
+  <text x="85" y="205" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="end">2</text>
+  <line x1="95" y1="150" x2="100" y2="150" stroke="white" stroke-width="1"/>
+  <text x="85" y="155" fill="white" font-size="12" font-family="Poppins, sans-serif" text-anchor="end">3</text>
+
+  <!-- 3D Grid (Perspective) -->
+  <!-- Grid lines parallel to X-axis -->
+  <line x1="100" y1="325" x2="300" y2="225" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="125" y1="337.5" x2="325" y2="237.5" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+  <!-- Grid lines parallel to Y-axis -->
+  <line x1="150" y1="275" x2="250" y2="325" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="200" y1="250" x2="300" y2="300" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+  <!-- Vertical grid lines (z-direction) -->
+  <line x1="150" y1="275" x2="150" y2="225" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="200" y1="250" x2="200" y2="200" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="250" y1="225" x2="250" y2="175" stroke="url(#gridGradient)" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Surface (z = x² + y²) approximated with a mesh of polylines -->
+  <polyline points="150,275,175,262.5,200,250,225,262.5,250,275" fill="none" stroke="url(#surfaceGradient)" stroke-width="2" stroke-opacity="0.8">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="3s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="125,312.5,150,300,175,287.5,200,275,225,287.5" fill="none" stroke="url(#surfaceGradient)" stroke-width="2" stroke-opacity="0.8">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="3s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="150,275,150,250,175,237.5,200,225,225,237.5" fill="none" stroke="url(#surfaceGradient)" stroke-width="2" stroke-opacity="0.8">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="3s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="175,287.5,175,262.5,200,250,225,262.5,250,275" fill="none" stroke="url(#surfaceGradient)" stroke-width="2" stroke-opacity="0.8">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="3s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- Animated point tracing the surface -->
+  <circle cx="200" cy="250" r="5" fill="yellow">
+    <animate attributeName="cx" values="150;175;200;225;250;225;200;175;150" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="275;262.5;250;262.5;275;287.5;300;287.5;275" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="5;6;5" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Function notation -->
+  <text x="200" y="380" fill="white" font-size="16" font-family="Syne, sans-serif" text-anchor="middle">z = x² + y²</text>
+
+  <!-- Hover effects -->
+  <style>
+    polyline:hover { stroke-width: 3; stroke-opacity: 1; }
+    circle:hover { animation-play-state: paused; }
+  </style>
+</svg>
+</section>
+<!-- ========== HERO SECTION END ========== -->
+
+<!-- ========== 3D GRAPH SECTION START ========== -->
+<section id="graph-section">
+  <div class="graph-ui">
+    <h2 class="split-text span">Interactive 3D Graph</h2>
+    <p class="desc">Visualize any function in 3D — type an equation and see it come alive.</p>
+    <div class="input-area desc">
+      <label for="equation">Equation (z = x^2 - y^2 )</label>
+      <input type="text" id="equation" value="sqrt(1 - x^2 - y^2)" />
+      <div class="btn-row">
+        <button id="plotBtn">Plot</button>
+        <button id="toggleBtn">Toggle Grid</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="plot"></div>
+</section>
+<!-- ========== 3D GRAPH SECTION END ========== -->
+
+
+<!-- ========== FOOTER START ========== -->
+  <footer>
+    <!-- Logo + Tagline -->
+    <div class="footer-top">
+      <img src="/public/Derivium Logo.svg" alt="Derivium Logo" class="footer-logo">
+      <p class="footer-tagline">Powerful Calculations • Clean Visuals • Great Results</p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <a href="https://github.com/TahaHassan-code/Derivium" target="_blank" class="social-btn github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-2.9.3-5.2-1.3-5.2-3.6
+          0-2 2.3-3.6 5.2-3.6 2.9-.3 5.2 1.3 5.2 3.6zm-33.8-10.8c-.7
+          2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2 3.6-2.9
+          6.5-2 2.9.7 4.9 2.9 4.2 4.9zm45.1-1.7c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
+          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm65.4
+          37.1c-8.1 0-14.6-6.2-14.6-14.6s6.5-14.6
+          14.6-14.6c8.1 0 14.6 6.2 14.6 14.6s-6.5 14.6-14.6
+          14.6zm82.8-44.2c-.7 2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2
+          3.6-2.9 6.5-2 2.9.7 4.9 2.9 4.2 4.9zm37.1 6.9c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
+          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm32.6-21.6c-2.9
+          0-5.2-2-5.2-4.9s2.3-4.9 5.2-4.9c2.9 0 5.2 2 5.2
+          4.9s-2.3 4.9-5.2 4.9zM248 8C111 8 0 119.1 0 256c0
+          110.9 71.7 205.1 171.3 238.4 12.8 2.3 17.4-5.5
+          17.4-12.2 0-6.2-.3-22.5-.3-44.2-70.1
+          15.2-84.9-33.9-84.9-33.9-11.6-29.6-28.4-37.4-28.4-37.4-23.2-15.9
+          1.7-15.6 1.7-15.6 25.8 1.7 39.4 26.5 39.4
+          26.5 22.9 39.4 59.8 28.1 74.4 21.5 2.3-16.5 8.8-28.1
+          16.2-34.7-55.9-6.2-114.6-28.1-114.6-124.9
+          0-27.4 9.7-49.9 25.8-67.5-2.6-6.2-11.2-31.3
+          2.6-65.1 0 0 21.2-6.8 69.1 26.1
+          20.3-5.5 41.7-8.4 63-8.4s42.7 2.9
+          63 8.4c47.9-33.2 69.1-26.1
+          69.1-26.1 13.8 33.9 5.2 58.9
+          2.6 65.1 16.2 17.7 25.8 40.1
+          25.8 67.5 0 97.1-59.1 118.4-115.5
+          124.6 9.1 7.8 17.1 23.2 17.1
+          47.1 0 34.1-.3 61.6-.3 69.8 0
+          6.8 4.6 14.6 17.4 12.2C424.3
+          461.1 496 366.9 496 256
+          496 119.1 385 8 248 8z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p >&copy; 2025 Derivium. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">License</a>
+        <a href="#">Privacy</a>
+        <a href="#">About Us</a>
+      </div>
+    </div>
+  </footer>
+<!-- ========== FOOTER END ========== -->
+
+  <!-- ========== JAVSACRIPT CDN/SCRIPTS ========== -->
+  <script type="module" src="/src/assets/js/script.js"></script>
+</body>
+</html>
