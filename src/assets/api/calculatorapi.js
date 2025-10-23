@@ -1,10 +1,10 @@
 export async function fetchResult(mode, equation, variable, point) {
   let apiUrl = "";
 
-  if (mode === "limit") apiUrl = "https://maazbse.pythonnywhere.com/limit";
+  if (mode === "limit") apiUrl = "https://maazbse.pythonanywhere.com/limit";
   else if (mode === "derivative") apiUrl = "https://maazbse.pythonanywhere.com/derivative";
   else if (mode === "partial") apiUrl = "https://maazbse.pythonanywhere.com/partial-derivative";
-  else if (mode === "total") apiUrl = "https://maazbse.pythonanywhe=re.com/total-derivative";
+  else if (mode === "total") apiUrl = "https://maazbse.pythonanywhere.com/total-derivative";
   else throw new Error("Invalid mode");
 
   const payload =
