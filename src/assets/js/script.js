@@ -58,18 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // LOCOMOTIVE SCROLL IN WHOLE WEBSITE
 // const locomotiveScroll = new LocomotiveScroll();
 
-// SMOOTH SCROLL TO CALCULATOR ON PRESSING BUTTON IN OUT TOOLS SECTION
-// document.querySelectorAll('a[href^="#calc-sec"]').forEach(anchor => {
-//   anchor.addEventListener('click', function(e) {
-//     e.preventDefault(); // Prevent default instant jump
-//     const targetId = this.getAttribute('href').substring(1); // Get section ID (without #)
-//     const targetElement = document.getElementById(targetId);
-//     if (targetElement) {
-//       targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to section
-//     }
-//   });
-// });
-
 // GSAP MUST BE LOADED BEFORE THIS SCRIPT
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
