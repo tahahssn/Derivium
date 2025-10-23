@@ -1,5 +1,5 @@
 import { gsap } from "gsap"
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 import { initCalculator } from "./calculator.js";
 import { initGraphUI } from "./graph.js";
 
