@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Derivium — Work in Progress</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -14,69 +17,109 @@
 
     body {
       height: 100vh;
-      background: radial-gradient(circle at center, #0d0d0d, #000);
-      color: #fff;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      overflow: hidden;
+      background: radial-gradient(circle at 20% 20%, #020b1a, #010614 80%);
+      color: white;
+      position: relative;
     }
 
+    /* 🔷 Animated floating particles */
+    .particles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particles span {
+      position: absolute;
+      display: block;
+      width: 8px; height: 8px;
+      background: rgba(0, 136, 255, 0.6);
+      box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
+      border-radius: 50%;
+      animation: move 12s linear infinite;
+    }
+
+    @keyframes move {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-1000px) scale(0.5); opacity: 0; }
+    }
+
+    /* 🔷 Glass container */
     .glass {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      padding: 3rem 4rem;
+      position: relative;
+      z-index: 10;
       text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
+      background: rgba(0, 0, 30, 0.4);
+      border: 1px solid rgba(0, 136, 255, 0.3);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 25px rgba(0, 136, 255, 0.3);
+      padding: 3rem 5rem;
+      border-radius: 20px;
+      animation: fadeIn 1.6s ease-in-out;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #ff8800, #ff3c00);
+      font-size: 3rem;
+      background: linear-gradient(90deg, #00b7ff, #007bff, #00b7ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: glow 2.5s ease-in-out infinite alternate;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #007bff; }
+      to { text-shadow: 0 0 25px #00b7ff; }
     }
 
     p {
-      font-size: 1.1rem;
-      color: #ddd;
+      font-size: 1.2rem;
+      color: #b8daff;
       margin-bottom: 2rem;
+      opacity: 0.85;
+      animation: fadeIn 2s ease forwards 0.5s;
     }
 
-    .loader {
-      border: 4px solid rgba(255, 255, 255, 0.1);
-      border-top: 4px solid #ff6600;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      animation: spin 1.2s linear infinite;
-      margin: 0 auto;
+    .btn {
+      background: linear-gradient(90deg, #008cff, #005eff);
+      border: none;
+      color: white;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .btn:hover {
+      background: linear-gradient(90deg, #00a2ff, #007bff);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 162, 255, 0.7);
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
       position: absolute;
       bottom: 15px;
       font-size: 0.9rem;
-      color: #777;
+      color: #88aaff;
       text-align: center;
+      width: 100%;
     }
 
     footer a {
-      color: #ff6600;
+      color: #00b7ff;
       text-decoration: none;
       transition: 0.3s;
     }
@@ -84,17 +127,51 @@
     footer a:hover {
       color: #fff;
     }
+
+    /* Responsive magic */
+    @media (max-width: 768px) {
+      .glass {
+        padding: 2rem;
+      }
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1rem; }
+      .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
+    }
   </style>
 </head>
+
 <body>
+  <!-- 💫 Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ⚡ Glass UI Center -->
   <div class="glass">
-    <h1>🚧 Derivium is Under Construction</h1>
-    <p>We’re building something incredible. Please check back soon!</p>
-    <div class="loader"></div>
+    <h1>🚧 Derivium is Evolving</h1>
+    <p>We’re building the future of mathematical intelligence.<br>
+    The system is under enhancement — stay tuned for the next evolution.</p>
+    <button class="btn" onclick="notifyUser()">Notify Me</button>
   </div>
 
-  <footer>
-    © 2025 Derivium | Crafted with ❤️ by Team Derivium
-  </footer>
+  <footer>© 2025 Derivium | Innovating with 💙</footer>
+
+  <script>
+    // 🎇 Particle generator
+    const particleContainer = document.getElementById('particles');
+    for (let i = 0; i < 60; i++) {
+      const span = document.createElement('span');
+      const size = Math.random() * 6 + 3;
+      span.style.width = `${size}px`;
+      span.style.height = `${size}px`;
+      span.style.left = `${Math.random() * 100}%`;
+      span.style.bottom = `-${Math.random() * 200}px`;
+      span.style.animationDelay = `${Math.random() * 10}s`;
+      particleContainer.appendChild(span);
+    }
+
+    // 🔔 Interactive “Notify Me”
+    function notifyUser() {
+      alert("We'll notify you once Derivium is live! 🚀");
+    }
+  </script>
 </body>
 </html>
