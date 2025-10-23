@@ -1,8 +1,15 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+
+# Environment files
 .env
 .env.local
 .env.production
 *.env
+
+# OS junk
 .DS_Store
 Thumbs.db
