@@ -19,7 +19,7 @@ function plotEquation() {
   }
 
   const x = [], y = [];
-  const range = 2, step = 0.1;
+  const range = 2.5, step = 0.1;
 
   for (let i = -range; i <= range; i += step) x.push(i);
   for (let j = -range; j <= range; j += step) y.push(j);

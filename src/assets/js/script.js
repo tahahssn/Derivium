@@ -7,6 +7,47 @@ document.addEventListener("DOMContentLoaded", () => {
   initGraphUI();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const isMobile =
+    /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+      navigator.userAgent
+    ) || window.innerWidth <= 1024;
+
+  if (isMobile) {
+    // Create warning overlay
+    const warning = document.createElement("div");
+    warning.id = "device-warning";
+    warning.innerHTML = `
+      <div class="warning-box">
+        <h2>⚠️ Desktop Recommended</h2>
+        <p>This site is best viewed on a laptop or desktop for full functionality.</p>
+        <button id="continue-anyway">Continue Anyway</button>
+      </div>
+    `;
+
+    document.body.appendChild(warning);
+
+    // Hide all content except warning
+    const allContent = Array.from(document.body.children).filter(
+      (el) => el.id !== "device-warning"
+    );
+    allContent.forEach((el) => (el.style.display = "none"));
+
+    // Continue Anyway Button
+    document
+      .getElementById("continue-anyway")
+      .addEventListener("click", () => {
+        warning.remove();
+        allContent.forEach((el) => (el.style.display = ""));
+      });
+
+    // Force show warning now
+    setTimeout(() => {
+      warning.style.display = "flex";
+    }, 100);
+  }
+});
+
 // CALCULATOR.JS INTEGRATION IN SCRIPT JS 
 document.addEventListener("DOMContentLoaded", () => {
   initCalculator();
