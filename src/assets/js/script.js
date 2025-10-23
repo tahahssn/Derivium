@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGraphUI();
 });
 
+// MOBILE WARNING
 document.addEventListener("DOMContentLoaded", function () {
   const isMobile =
     /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // LOCOMOTIVE SCROLL IN WHOLE WEBSITE
-const locomotiveScroll = new LocomotiveScroll();
+// const locomotiveScroll = new LocomotiveScroll();
 
 // SMOOTH SCROLL TO CALCULATOR ON PRESSING BUTTON IN OUT TOOLS SECTION
 // document.querySelectorAll('a[href^="#calc-sec"]').forEach(anchor => {
