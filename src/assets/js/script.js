@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // LOCOMOTIVE SCROLL IN WHOLE WEBSITE
-// const locomotiveScroll = new LocomotiveScroll();
+const locomotiveScroll = new LocomotiveScroll();
 
 // GSAP MUST BE LOADED BEFORE THIS SCRIPT
 import { ScrollTrigger } from "gsap/ScrollTrigger";
