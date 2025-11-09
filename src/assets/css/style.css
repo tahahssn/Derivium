@@ -1891,7 +1891,7 @@ input:-webkit-autofill:focus {
 .form-heading {
   text-align: center;
   margin: 2em;
-  color: #64ffda;
+  color: #38bdf8;
   font-size: 1.2em;
   background-color: transparent;
   align-self: center;
@@ -1929,22 +1929,22 @@ input:-webkit-autofill:focus {
   border: none;
   outline: none;
   background-color: transparent;
-  color: #64ffda;
+  color: #38bdf8;
   font-weight: bold;
-  outline: 1px solid #64ffda;
+  outline: 1px solid #38bdf8;
   transition: all ease-in-out 0.3s;
 }
 
 .sendMessage-btn:hover {
   transition: all ease-in-out 0.3s;
-  background-color: #64ffda;
+  background-color: #38bdf8;
   color: #000;
   cursor: pointer;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
 .form-card1 {
-  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  background-image: linear-gradient(163deg, #38bdf8 0%, #38bdf8 100%);
   border-radius: 22px;
   transition: all 0.3s;
 }
