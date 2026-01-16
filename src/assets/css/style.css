@@ -2072,6 +2072,7 @@ input:-webkit-autofill:focus {
       background: #0b1220;
       color: #e6eef8;
       max-width: 100vw;
+      flex-wrap: wrap;
     }
 
     /*================ TEAM SECTION ============== */
