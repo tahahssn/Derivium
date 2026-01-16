@@ -2066,14 +2066,15 @@ input:-webkit-autofill:focus {
     }
 
     /*================ FEATURES SECTION ============== */
-.features-section {
-  padding: 3.5rem 1.25rem;
-  text-align: center;
-  background: #0b1220;
-  color: #e6eef8;
-  display: flex;
-  flex-wrap: wrap;
-}
+    .features-section {
+      padding: 3.5rem 1.25rem;
+      text-align: center;
+      background: #0b1220;
+      color: #e6eef8;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
     /*================ TEAM SECTION ============== */
     .team-desc {
