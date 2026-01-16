@@ -1984,15 +1984,14 @@ input:-webkit-autofill:focus {
     }
 
     /*================ BUTTON RESET ============== */
-    /* button {
+    button {
       display: none;
-    } */
+    }
 
     .hero {
       position: relative;
       height: 100vh;
       display: flex;
-      top: 1rem;
       align-items: center;
       justify-content: flex-start;
       gap: 20rem;
