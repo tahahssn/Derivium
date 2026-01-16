@@ -1984,13 +1984,13 @@ input:-webkit-autofill:focus {
     }
 
     /*================ BUTTON RESET ============== */
-    button {
+    /* button {
       display: none;
-    }
+    } */
 
     .hero {
       position: relative;
-      height: 100vh;
+      height: 100%;
       display: flex;
       top: -1rem;
       align-items: center;
@@ -2002,7 +2002,7 @@ input:-webkit-autofill:focus {
 
     .hero-content {
       max-width: 40rem;
-      z-index: 2;/
+      z-index: 2;
     }
 
     .container {
@@ -2033,13 +2033,13 @@ input:-webkit-autofill:focus {
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       color: #38bdf8;
       font-weight: 400;
     }
 
     .tagline {
-      font-size: 2rem;
+      font-size: 3rem;
       margin: 1rem 0;
       font-weight: 600;
     }
@@ -2047,7 +2047,7 @@ input:-webkit-autofill:focus {
     .desc {
       max-width: 15.75rem; /* 600px ≈ 37.5rem */
       margin: 0 auto 2rem;
-      font-size: .6rem;
+      font-size: 1rem;
       color: #d1d5db;
     }
 
