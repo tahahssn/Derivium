@@ -2050,13 +2050,13 @@ footer {
 }
 
 .hero h1 {
-  font-size: 1rem;
+  font-size: 3rem;
   color: #38bdf8;
   font-weight: 400;
 }
 
 .tagline {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 1rem 0;
   font-weight: 600;
 }
@@ -2064,7 +2064,7 @@ footer {
 .desc {
   max-width: 15.75rem; /* 600px ≈ 37.5rem */
   margin: 0 auto 2rem;
-  font-size: .55rem;
+  font-size: 1.55rem;
   color: #d1d5db;
 }
 
