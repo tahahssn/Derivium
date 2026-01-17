@@ -1954,7 +1954,7 @@ input:-webkit-autofill:focus {
 
 /*================ RESPONSIVE ============== */
 
-@media (max-width: 780px) {
+@media (min-width: 780px) {
 
     /*================ NAVBAR ============== */
     .navbar {
