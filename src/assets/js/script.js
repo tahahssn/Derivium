@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector(".mobile-menu");
+  const closeBtn = document.querySelector(".mobile-close");
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeMenu);
+    }
 
   if (!toggle || !menu) return;
 

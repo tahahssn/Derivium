@@ -1991,6 +1991,15 @@ input:-webkit-autofill:focus {
   font-weight: 600;
 }
 
+.mobile-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
 
 /*================ RESPONSIVE ============== */
 
@@ -2027,7 +2036,6 @@ input:-webkit-autofill:focus {
       display: none;
     }
 
-    
     .nav-toggle {
       display: block;
     }
