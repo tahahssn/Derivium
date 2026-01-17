@@ -2128,11 +2128,17 @@ input:-webkit-autofill:focus {
           stroke: #222;
     }
 
+    .calculator-section {
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
     .card .calculator{
       width: 80%;
       max-width: 500px;
       margin: auto;
-      padding: 15px;
+      padding: 25px;
       border-radius: 15px;
     }
 
