@@ -13,6 +13,49 @@ document.addEventListener("DOMContentLoaded", () => {
   initGraphUI();
 });
 
+// HAMBURGER MENU
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (!toggle || !navLinks) return;
+
+  let open = false;
+  gsap.set(navLinks, { y: "-100%" });
+
+  toggle.addEventListener("click", () => {
+    if (!open) {
+      toggle.className = "ri-close-line nav-toggle";
+      gsap.to(navLinks, {
+        y: "0%",
+        duration: 0.6,
+        ease: "power4.out",
+      });
+    } else {
+      toggle.className = "ri-menu-4-line nav-toggle";
+      gsap.to(navLinks, {
+        y: "-100%",
+        duration: 0.5,
+        ease: "power4.in",
+      });
+    }
+    open = !open;
+  });
+
+  // Auto close when link clicked
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      toggle.className = "ri-menu-4-line nav-toggle";
+      gsap.to(navLinks, {
+        y: "-100%",
+        duration: 0.4,
+        ease: "power4.in",
+      });
+      open = false;
+    });
+  });
+});
+
 // LOCOMOTIVE SCROLL IN WHOLE WEBSITE
 // const locomotiveScroll = new LocomotiveScroll();
 
