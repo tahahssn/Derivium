@@ -2094,6 +2094,10 @@ input:-webkit-autofill:focus {
     }
 
     /*================ FOOTER BOTTOM ============== */
+    .footer-bottom {
+      gap: 8px;
+    }
+
     .footer-bottom p {
       font-size: 0.8rem;
       font-family: "Syne";
