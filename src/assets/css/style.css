@@ -1976,7 +1976,7 @@ input:-webkit-autofill:focus {
 
     /*================ LOGO ============== */
     .logo {
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: bold;
       color: #38bdf8;
       text-transform: uppercase;
