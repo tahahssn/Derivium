@@ -2128,8 +2128,12 @@ input:-webkit-autofill:focus {
           stroke: #222;
     }
 
+    .calculator-section{
+      width: 80vw;
+    }
+
     .card .calculator{
-      width: 100%;
+      width: 80%;
       max-width: 500px;
       margin: auto;
       padding: 25px;
