@@ -2130,7 +2130,7 @@ input:-webkit-autofill:focus {
 
     .card .calculator{
       width: 80%;
-      max-width: 450px;
+      max-width: 500px;
       margin: auto;
       padding: 25px;
       border-radius: 15px;
