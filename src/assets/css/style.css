@@ -1955,10 +1955,10 @@ input:-webkit-autofill:focus {
 /*================ RESPONSIVE ============== */
 
 /* ========== SUPER SMALL MOBILES =========== */
-@media (min-width: 300px) and (max-width: 480px) {}  
+@media (min-width: 300px) and (max-width: 399px) {}  
 
 /* ========== NORMAL MOBILE PHONES + SMALL TABLETS =========== */
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 400px) and (max-width: 767px) {
     /*================ NAVBAR ============== */
     .navbar {
       position: relative;
