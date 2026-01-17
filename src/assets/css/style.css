@@ -2048,6 +2048,10 @@ input:-webkit-autofill:focus {
       max-width: 60rem;
     }
 
+    .get-desc{
+      font-size: 1rem;
+    }
+
     .get-tagline {
       margin-top: -1rem;
       font-size: 4rem;
