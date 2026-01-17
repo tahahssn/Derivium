@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggle.addEventListener("click", () => {
     if (!open) {
-      toggle.className = "ri-close-line nav-toggle";
+      toggle.className = "ri-menu-line nav-toggle";
       gsap.to(navLinks, {
         y: "0%",
         duration: 0.6,
