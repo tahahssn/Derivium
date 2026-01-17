@@ -2712,10 +2712,6 @@ input:-webkit-autofill:focus {
       display: none;
     }
 
-    .nav-toggle {
-      display: block;
-    }
-
     .hero {
       position: relative;
       height: 100vh;
