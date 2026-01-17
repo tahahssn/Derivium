@@ -1952,10 +1952,6 @@ input:-webkit-autofill:focus {
   border-radius: 20px;
 }
 
-.aboutcustom-btn{
-  display: none;
-}
-
 /*================ RESPONSIVE ============== */
 
 @media (max-width: 780px) {
@@ -2011,35 +2007,6 @@ input:-webkit-autofill:focus {
     .container {
       display: none;
     }
-
-    .aboutcustom-btn {
-      position: relative;
-      opacity: 0;
-      background-color: #0f172a; /* bg-slate-900 */
-      height: 4rem; /* 16 * 0.25rem */
-      width: 16rem; /* 64 * 0.25rem */
-      border: 2px solid #14b8a6; /* border-teal-600 */
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 0.7rem; /* rounded-xl */
-      padding: 0.75rem; /* p-3 */
-      text-align: left;
-      overflow: hidden;
-  }
-
-  .aboutcustom-btn a{
-    text-decoration: none;
-    color: white;
-    transition: all 0.5s ease;
-    cursor: pointer;
-  }
-
-  .aboutcustom-btn:hover a{
-    transform: scale(1.05);
-    border-color: #10b981; /* hover:border-emerald-400 */
-    color: #34d399;        /* hover:text-emerald-300 */
-  }
 
     /*================ CANVAS Z-INDEX ============== */
     #symbolCanvas {
