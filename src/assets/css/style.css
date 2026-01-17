@@ -1952,7 +1952,7 @@ input:-webkit-autofill:focus {
   border-radius: 20px;
 }
 
-#nav-toggle {
+.nav-toggle {
   font-size: 28px;
   color: #fff;
   cursor: pointer;
@@ -1982,7 +1982,7 @@ input:-webkit-autofill:focus {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     }
 
-    #nav-toggle {
+    .nav-toggle {
       display: block;
     }
 
