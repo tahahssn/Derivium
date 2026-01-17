@@ -1962,7 +1962,7 @@ input:-webkit-autofill:focus {
 
 /*=============== HAMBURGER MENU ===============*/
 .nav-toggle {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #fff;
   cursor: pointer;
   display: none;
@@ -1982,7 +1982,6 @@ input:-webkit-autofill:focus {
   align-items: center;
   gap: 3rem;
   z-index: 3000;
-  font-size: 1.4rem;
 }
 
 .mobile-menu a {
@@ -2026,7 +2025,7 @@ input:-webkit-autofill:focus {
 
     /*================ LOGO ============== */
     .logo {
-      font-size: 1rem;
+      font-size: 1.4rem;
       font-weight: bold;
       color: #38bdf8;
       text-transform: uppercase;
@@ -2379,6 +2378,10 @@ input:-webkit-autofill:focus {
       display: none;
     }
 
+    .nav-toggle {
+      display: block;
+    }
+
     /*================ LINKS ============== */
     .nav-links {
       display: none;
@@ -2707,6 +2710,10 @@ input:-webkit-autofill:focus {
     /*================ BUTTON RESET ============== */
     .navbar .learn-more{
       display: none;
+    }
+
+    .nav-toggle {
+      display: block;
     }
 
     .hero {
