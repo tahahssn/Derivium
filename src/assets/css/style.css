@@ -2238,6 +2238,7 @@ input:-webkit-autofill:focus {
     }
 
     .contacthero{
+      top: 2rem;
       gap: 15rem;
       padding: 0 3rem;
     }
