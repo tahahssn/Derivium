@@ -16,43 +16,49 @@ document.addEventListener("DOMContentLoaded", () => {
 // HAMBURGER MENU
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const menu = document.querySelector(".mobile-menu");
 
-  if (!toggle || !navLinks) return;
+  if (!toggle || !menu) return;
 
-  let open = false;
-  gsap.set(navLinks, { y: "-100%" });
+  let isOpen = false;
+
+  gsap.set(menu, { x: "-100%" });
 
   toggle.addEventListener("click", () => {
-    if (!open) {
+    if (!isOpen) {
+      menu.style.display = "flex";
       toggle.className = "ri-menu-line nav-toggle";
-      gsap.to(navLinks, {
-        y: "0%",
+
+      gsap.to(menu, {
+        x: "0%",
         duration: 0.6,
-        ease: "power4.out",
+        ease: "power4.out"
       });
+
+      isOpen = true;
     } else {
-      toggle.className = "ri-menu-4-line nav-toggle";
-      gsap.to(navLinks, {
-        y: "-100%",
-        duration: 0.5,
-        ease: "power4.in",
-      });
+      closeMenu();
     }
-    open = !open;
   });
 
-  // Auto close when link clicked
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      toggle.className = "ri-menu-4-line nav-toggle";
-      gsap.to(navLinks, {
-        y: "-100%",
-        duration: 0.4,
-        ease: "power4.in",
-      });
-      open = false;
+  function closeMenu() {
+    toggle.className = "ri-menu-4-line nav-toggle";
+
+    gsap.to(menu, {
+      x: "-100%",
+      duration: 0.5,
+      ease: "power4.in",
+      onComplete: () => {
+        menu.style.display = "none";
+      }
     });
+
+    isOpen = false;
+  }
+
+  // close on link click
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
   });
 });
 
