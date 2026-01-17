@@ -1952,6 +1952,14 @@ input:-webkit-autofill:focus {
   border-radius: 20px;
 }
 
+.nav-toggle {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  z-index: 1001;
+}
+
 /*================ RESPONSIVE ============== */
 
 /* ========== SUPER SMALL MOBILES =========== */
@@ -1974,6 +1982,32 @@ input:-webkit-autofill:focus {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     }
 
+    .nav-toggle {
+      display: block;
+    }
+
+    .desktop-only {
+      display: none;
+    }
+
+    .nav-links {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 15, 30, 0.75);
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transform: translateY(-100%);
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      font-size: 1.5rem;
+    }
+
     /*================ LOGO ============== */
     .logo {
       font-size: 1rem;
@@ -1988,9 +2022,9 @@ input:-webkit-autofill:focus {
     }
 
     /*================ LINKS ============== */
-    .nav-links {
+    /* .nav-links {
       display: none;
-    }
+    } */
 
     .hero {
       position: relative;
