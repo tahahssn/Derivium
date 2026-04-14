@@ -52,23 +52,23 @@ Derivium is a modern **full-stack web application** designed to help students an
 ---
 
 ## 🧠 Architecture Overview
-
-Frontend (UI)
-│
-├── User Input (Equations)
-├── GSAP + KaTeX Rendering
-├── Plotly Graph Engine
-│
-└── Fetch API
-│
-▼
-Backend (Flask API)
-│
-├── SymPy Computation
-├── Expression Parsing
-└── JSON Response
-
----
+    ```bash
+    Frontend (UI)
+    │
+    ├── User Input (Equations)
+    ├── GSAP + KaTeX Rendering
+    ├── Plotly Graph Engine
+    │
+    └── Fetch API
+    │
+    ▼
+    Backend (Flask API)
+    │
+    ├── SymPy Computation
+    ├── Expression Parsing
+    └── JSON Response
+    
+    ---
 
 ## 🔐 Backend Code Notice
 
@@ -80,21 +80,21 @@ For academic or evaluation purposes, the complete backend source code is provide
 ---
 
 ## 📂 Project Structure
-
-Derivium/
-│
-├── index.html
-├── src/
-│ ├── pages/
-│ │ ├── about.html
-│ │ ├── contact.html
-│ │ └── getstarted.html
-│ ├── css/
-│ ├── js/
-│ └── assets/
-│
-├── README.md
-└── package.json
+     ```bash
+        Derivium/
+        │
+        ├── index.html
+        ├── src/
+        │ ├── pages/
+        │ │ ├── about.html
+        │ │ ├── contact.html
+        │ │ └── getstarted.html
+        │ ├── css/
+        │ ├── js/
+        │ └── assets/
+        │
+        ├── README.md
+        └── package.json
 
 
 ---
