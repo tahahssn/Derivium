@@ -1,355 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Derivium makes calculus easy with interactive tools for solving limits, derivatives, and creating 2D/3D graphs—all in one intuitive platform.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Derivium</title>
-  <link rel="icon" href="/public/D.svg" type="image/svg+xml">
-   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/assets/css/style.css">
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Derivium | Precision in Progress</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#d2e4ff",
+                    "on-surface-variant": "#414846",
+                    "secondary-container": "#e6e2db",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed-variant": "#304c45",
+                    "mint-accent": "#E2FFEF",
+                    "primary-fixed-dim": "#aecdc4",
+                    "on-tertiary-container": "#418cd8",
+                    "secondary-fixed-dim": "#cac6bf",
+                    "surface-container": "#f0eded",
+                    "warning-gold": "#FCB900",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-fixed-dim": "#a0c9ff",
+                    "tertiary-container": "#002240",
+                    "surface-dim": "#dcd9d9",
+                    "surface": "#fcf9f8",
+                    "surface-container-highest": "#e5e2e1",
+                    "secondary": "#605e59",
+                    "on-secondary-fixed": "#1d1c18",
+                    "on-tertiary-fixed": "#001c37",
+                    "primary": "#000d0a",
+                    "on-background": "#1b1c1c",
+                    "secondary-fixed": "#e6e2db",
+                    "primary-container": "#082620",
+                    "inverse-primary": "#aecdc4",
+                    "on-secondary-fixed-variant": "#484742",
+                    "on-primary-fixed": "#02201a",
+                    "inverse-surface": "#303030",
+                    "peach-highlight": "#FCF0E0",
+                    "surface-tint": "#47645c",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#00497f",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary": "#000b1a",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#cae9df",
+                    "hot-pink": "#F78DA7",
+                    "background": "#fcf9f8",
+                    "outline": "#727976",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#66645f",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1b1c1c",
+                    "on-primary-container": "#718f86",
+                    "error-red": "#CF2E2E",
+                    "surface-container-high": "#eae7e7",
+                    "inverse-on-surface": "#f3f0ef",
+                    "outline-variant": "#c1c8c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "44px",
+                    "gutter": "16px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "xl": "60px",
+                    "container-max": "1216px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Anton"],
+                    "helper-text": ["Inter"],
+                    "eyebrow": ["Inter"],
+                    "button": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-hero-mobile": ["Anton"],
+                    "headline-lg": ["Anton"],
+                    "headline-lg-mobile": ["Anton"],
+                    "display-hero": ["Anton"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "31.2px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                    "helper-text": ["12px", {"lineHeight": "19.2px", "letterSpacing": "0px", "fontWeight": "400"}],
+                    "eyebrow": ["18px", {"lineHeight": "21.6px", "letterSpacing": "0px", "fontWeight": "400"}],
+                    "button": ["15px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0px", "fontWeight": "500"}],
+                    "display-hero-mobile": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+                    "headline-lg": ["36px", {"lineHeight": "43.2px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                    "display-hero": ["128px", {"lineHeight": "128px", "letterSpacing": "-1px", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-layer {
+            background-color: #fcf9f8;
+            border: 1px solid #F2F2F2;
+        }
+        .canvas-bg {
+            background: radial-gradient(circle at top right, #E2FFEF 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, #FCF0E0 0%, transparent 40%);
+        }
+        .cursor-glow {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(226, 255, 239, 0.4) 0%, transparent 70%);
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+    </style>
 </head>
-<body>
- 
-<!-- ========== NAVBAR START ========== -->
-   <nav class="navbar">
-    <div class="logo">Derivium</div>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/src/pages/about.html">About</a>
-       <a href="/src/pages/contact.html">Contact</a>
-    </div>
-    <button class="learn-more">
-      <span class="circle" aria-hidden="true">
-        <span class="icon arrow"></span>
-      </span>
-      <span class="button-text"><a href="/src/pages/getstarted.html">Get Started</a></span>
-    </button>
-    <i class="ri-menu-line nav-toggle"></i>
-  </nav>
-
-    <div class="mobile-menu">
-      <i class="ri-close-line mobile-close"></i>
-
-      <a href="/index.html">Home</a>
-      <a href="/src/pages/about.html">About</a>
-      <a href="/src/pages/contact.html">Contact</a>
-    </div>
-<!-- ========== NAVBAR END ========== -->
-
-<!-- ========== HERO SECTION START ========== -->
-  <section class="hero">
-    <div class="hero-content">
-    <p class="tagline split-text">From Limits to 3D Graphs</p>
-    <p class="tagline heroh2 split-text">Solve, Explore, Visualize</p>
-    <p class="desc">Discover calculus in a new light. Solve limits, derivatives, and partial derivatives with ease, and bring equations to life through interactive graphs.</p>
-    <button class="custom-btn"><a href="src/pages/getstarted.html">Get Started</a>
-    <span class="btn-before"></span>
-    <span class="btn-after"></span>
-  </button>
-  </div>
-  <canvas id="symbolCanvas"></canvas>
-  
-  <!-- ========== CUBE ========== -->
-<div class="container">
-  <div class="cube">
-    <div style="--x:-1; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-    <div style="--x:0; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-    <div style="--x:1; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-  </div>
-  <div class="cube">
-    <div style="--x:-1; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-    <div style="--x:0; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-    <div style="--x:1; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-  </div>
-  <div class="cube">
-    <div style="--x:-1; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-    <div style="--x:0; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-    <div style="--x:1; --y:0;">
-      <span style="--i:3;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:1;"></span>
-    </div>
-  </div>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden canvas-bg min-h-screen flex flex-col">
+<div class="cursor-glow opacity-0" id="glow"></div>
+<!-- TopAppBar -->
+<header class="w-full top-0 bg-surface dark:bg-surface-dim z-50">
+<div class="flex justify-center items-center py-md w-full px-gutter max-w-container-max mx-auto">
+<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary tracking-tight">Derivium</span>
 </div>
-</section>
-<!-- ========== HERO SECTION END ========== -->
+</header>
+<main class="flex-grow flex items-center justify-center px-gutter py-xl relative z-10">
+<div class="max-w-container-max w-full flex flex-col items-center text-center">
+<!-- Hero Section -->
+<div class="mb-xl">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-primary uppercase tracking-tighter leading-none mb-md">
+                    PRECISION IN <br class="hidden md:block"/> PROGRESS
+                </h1>
+<p class="font-eyebrow text-eyebrow text-secondary max-w-2xl mx-auto">
+                    We are fine-tuning our engine to bring you the next generation of mathematical precision.
+                </p>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md w-full max-w-4xl">
+<!-- Countdown/Live Date: High Contrast -->
+<div class="md:col-span-12 bg-primary-container p-xl flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover" data-alt="A sophisticated macro shot of complex mathematical equations etched in glass with high-energy neon green lighting. The background is a deep, dark forest green, creating a sharp professional contrast with the glowing formula lines. The mood is high-tech, focused, and suggests advanced computational power." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVjCfjx9egQ_DURFKS47UBHncx0-yC3Qg8tL8ljySj2uf4K2De67om_ZmlE9goI2bve24YtHOzKcX8urSSTLXkNWydHs-m5E22-5cbd4JehOLpQ5oLc_llt-G5VH7mhF1n9NxYjlBz3FAQqEc8otqd-3mN2d_hD0vTypsRM9aRpFFHoXD2fvMF3Nxic9Oscj7cy0LxwPnU_URBIwJMpMe0FRyB7pBkbaw_7YBmxMGAjwNK56zUeRvuo7Gd6pmUmWIIZwwF59SzWfs"/>
+</div>
+<div class="relative z-10 text-center">
+<span class="font-label-sm text-label-sm text-on-primary-container mb-xs uppercase tracking-widest block">System Restoration</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[48px] text-on-primary uppercase leading-none">
+                            BACK LIVE: JULY 7, 2026 <span class="text-mint-accent opacity-50 px-2">|</span> 12:00 AM
+                        </h2>
+</div>
+</div>
+<!-- Contact Card: Warm Background -->
+<div class="md:col-span-7 bg-peach-highlight p-md text-left flex flex-col justify-between border border-[#F2F2F2]">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Contact Support</h3>
+<p class="text-secondary font-body-md mb-md">Our team is available for urgent architectural inquiries during the maintenance window.</p>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">mail</span>
+<a class="font-button text-button text-primary hover:underline" href="mailto:hello@derivium.io">primormagency@gmail.com</a>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">call</span>
+<span class="font-button text-button text-primary">+1 (555) 000-4122</span>
+</div>
+</div>
+</div>
+<!-- Location Card -->
+<div class="md:col-span-5 bg-surface-container-lowest p-md border border-[#F2F2F2] flex flex-col justify-between">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary mb-xs" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<p class="font-label-sm text-label-sm uppercase text-secondary mb-xs">Headquarters</p>
+<p class="font-body-md text-primary leading-tight">Mathematical Research Center,<br/>128 Quantum Plaza,<br/>San Francisco, CA 94103</p>
+</div>
+<button class="bg-primary text-on-primary border border-[#1E73BE] h-[45px] px-md font-button text-button uppercase tracking-wider flex items-center justify-center gap-xs hover:scale-95 transition-all duration-150">
+                        View Map <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+<!-- Visual Accent - The Engine -->
+<div class="mt-xl opacity-20 pointer-events-none select-none">
+<div class="flex gap-md overflow-hidden animate-pulse">
+<span class="font-headline-lg text-headline-lg text-primary">0010110</span>
+<span class="font-headline-lg text-headline-lg text-primary">Σ INTEGRATE</span>
+<span class="font-headline-lg text-headline-lg text-primary">PRECISION</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bottom-0 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl w-full px-gutter max-w-container-max mx-auto gap-md">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="font-headline-md text-headline-md text-primary">Derivium</span>
+<p class="font-label-sm text-label-sm text-secondary">© 2026 Derivium Mathematical Systems. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Security Architecture</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for cursor glow
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+            glow.style.opacity = '1';
+        });
 
-<!-- ========== FEATURES CARDS START ========== -->
-<section class="features-section">
-  <h2 class="features-title">Features</h2>
-  <p class="features-sub">
-    Derivium simplifies calculus: from limits and derivatives to
-    interactive 2D/3D visualizations.
-  </p>
+        document.addEventListener('mouseleave', () => {
+            glow.style.opacity = '0';
+        });
 
-  <div class="cards-grid">
-    <!-- ========== CARD 01 ========== -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#06b6d4;">
-            <span class="card-icon">∞</span>
-          </div>
-          <div class="card__text">
-            <p class="card__title">Limits</p>
-            <p class="card__description">Calculate limits with precision across different types and cases.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== CARD 02 ========== -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#7c3aed;">
-            <span class="card-icon">∂</span>
-          </div>
-          <div class="card__text">
-            <p class="card__title">Derivatives</p>
-            <p class="card__description">Supports partial, total, and higher-order derivatives seamlessly.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== CARD 03 ========== -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#10b981;">
-            <span class="card-icon">📈</span>
-          </div>
-          <div class="card__text">
-            <p class="card__title">2D Graphs</p>
-            <p class="card__description">Generate smooth and accurate 2D graphs for functions and equations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== CARD 04 ========== -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#60a5fa;">
-            <span class="card-icon">🌐</span>
-          </div>
-          <div class="card__text">
-            <p class="card__title">3D Graphs</p>
-            <p class="card__description">Visualize complex functions in interactive and detailed 3D graphs.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- ========== FEATURES CARDS END ========== -->
-
-
-<!-- ========== SUPPORTERS SECTION START ========== -->
-  <section class="marquee-section">
-    <div class="marquee_header">Our Supporters</div>
-    
-    <div class="marquee">
-      <div class="marquee__inner line1">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/wolfram.com" alt="Wolfram" class="rounded">Wolfram Research</span>
-          <span><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png" alt="META">META</span>
-          <span><img src="https://p7.hiclipart.com/preview/8/502/432/google-logo-google-now-google-search-google-plus-thumbnail.jpg" alt="Google" class="rounded">Google</span>
-          <span><img src="https://toppng.com/uploads/preview/microsoft-logo-png-hd-11660471230b6nd5n6huh.png" alt="Microsoft">Microsoft</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line2">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/khanacademy.org" alt="Khan Academy" class="rounded">Khan Academy</span>
-          <span><img src="https://logo.clearbit.com/coursera.org" alt="Coursera">Coursera</span>
-          <span><img src="https://i.pinimg.com/736x/2a/62/c3/2a62c34e0d217a7aa14645ce114d84b3.jpg" alt="Open AI" class="rounded">Open AI</span>
-          <span><img src="https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg" alt="IBM">IBM</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line3">
-        <div class="marquee__group">
-           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLfQkHROu3_juWEJ0_sSnsw0hIGDtoKNwVKQ&s" alt="UBIT">UBIT</span>
-          <span><img src="https://substackcdn.com/image/fetch/$s_!G1lk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg" alt="Apple" class="rounded">Apple</span>
-           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocgnR9Y_Aq33mYH-oARaN0iIEEb96TllMTQ&s" alt="Kaggle" class="rounded">Kaggle</span>
-          <span><img src="https://m.media-amazon.com/images/I/61Aea4purkL._UF894,1000_QL80_.jpg" alt="Stanford">Stanford</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line4">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/udemy.com" alt="Udemy" class="rounded">Udemy</span>
-          <span><img src="https://logo.clearbit.com/maplesoft.com" alt="MapleSoft">MapleSoft</span>
-          <span><img src="https://logo.clearbit.com/sap.com" alt="SAP">SAP</span>
-          <span><img src="https://logo.clearbit.com/tableau.com" alt="Tableau">Tableau</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line5">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/desmos.com" alt="Desmos" class="rounded">Desmos</span>
-          <span><img src="https://logo.clearbit.com/sas.com" alt="SAS">SAS</span>
-          <span><img src="https://blog.adobe.com/en/publish/2020/05/28/media_1d87bf78b1ce19defbef0c7858b4df696215a4048.png?width=750&format=png&optimize=medium" alt="Adobe">Adobe</span>
-          <span><img src="https://cdn.discordapp.com/icons/1409245557607633069/dfb2b0adcd92a7a7e0a161a472dc74b3.webp?size=160&quality=lossless" alt="Game Night">Game Night</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line6">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/geogebra.org" alt="GeoGebra" class="rounded">GeoGebra</span>
-          <span><img src="https://logo.clearbit.com/oracle.com" alt="Oracle">Oracle</span>
-          <span><img src="https://logo.clearbit.com/duolingo.com" alt="Duolingo" class="rounded">Duolingo</span>
-          <span><img src="https://logo.clearbit.com/wiley.com" alt="Wiley">Wiley</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line7">
-        <div class="marquee__group">
-          <span><img src="https://yt3.googleusercontent.com/wtghMyEvmRZ9OSYmFjCN2Hk_4NsENwd6Kmau6k7n0in73FBvyEWpu6W4jDn8MWstLDh11FE8=s900-c-k-c0x00ffffff-no-rj" alt="edX">edX</span>
-          <span><img src="https://logo.clearbit.com/mathworks.com" alt="MathWorks">MathWorks</span>
-           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPW8v3fEXd2cAiPi5EmPK5Hf83FlA6UtNaXw&s" alt="Springer">Springer</span>
-          <span><img src="https://apk4free.net/wp-content/uploads/2024/05/brilliant.png" alt="Brilliant">Brilliant.org</span>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- ========== SUPPORTERS SECTION END ========== -->
-
-<!-- ========== FOOTER START ========== -->
-  <footer>
-    <!-- ========== LOGO + TAGLINE ========== -->
-    <div class="footer-top">
-      <img src="/public/Derivium Logo.svg" alt="Derivium Logo" class="footer-logo">
-      <p class="footer-tagline">Powerful Calculations • Clean Visuals • Great Results</p>
-    </div>
-
-    <!-- ========== SOCIAL ICONS ========== -->
-    <div class="footer-social">
-      <a href="https://github.com/TahaHassan-code/Derivium" target="_blank" class="social-btn github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-2.9.3-5.2-1.3-5.2-3.6
-          0-2 2.3-3.6 5.2-3.6 2.9-.3 5.2 1.3 5.2 3.6zm-33.8-10.8c-.7
-          2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2 3.6-2.9
-          6.5-2 2.9.7 4.9 2.9 4.2 4.9zm45.1-1.7c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
-          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm65.4
-          37.1c-8.1 0-14.6-6.2-14.6-14.6s6.5-14.6
-          14.6-14.6c8.1 0 14.6 6.2 14.6 14.6s-6.5 14.6-14.6
-          14.6zm82.8-44.2c-.7 2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2
-          3.6-2.9 6.5-2 2.9.7 4.9 2.9 4.2 4.9zm37.1 6.9c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
-          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm32.6-21.6c-2.9
-          0-5.2-2-5.2-4.9s2.3-4.9 5.2-4.9c2.9 0 5.2 2 5.2
-          4.9s-2.3 4.9-5.2 4.9zM248 8C111 8 0 119.1 0 256c0
-          110.9 71.7 205.1 171.3 238.4 12.8 2.3 17.4-5.5
-          17.4-12.2 0-6.2-.3-22.5-.3-44.2-70.1
-          15.2-84.9-33.9-84.9-33.9-11.6-29.6-28.4-37.4-28.4-37.4-23.2-15.9
-          1.7-15.6 1.7-15.6 25.8 1.7 39.4 26.5 39.4
-          26.5 22.9 39.4 59.8 28.1 74.4 21.5 2.3-16.5 8.8-28.1
-          16.2-34.7-55.9-6.2-114.6-28.1-114.6-124.9
-          0-27.4 9.7-49.9 25.8-67.5-2.6-6.2-11.2-31.3
-          2.6-65.1 0 0 21.2-6.8 69.1 26.1
-          20.3-5.5 41.7-8.4 63-8.4s42.7 2.9
-          63 8.4c47.9-33.2 69.1-26.1
-          69.1-26.1 13.8 33.9 5.2 58.9
-          2.6 65.1 16.2 17.7 25.8 40.1
-          25.8 67.5 0 97.1-59.1 118.4-115.5
-          124.6 9.1 7.8 17.1 23.2 17.1
-          47.1 0 34.1-.3 61.6-.3 69.8 0
-          6.8 4.6 14.6 17.4 12.2C424.3
-          461.1 496 366.9 496 256
-          496 119.1 385 8 248 8z"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- ========== FOOTER BOTTOM ========== -->
-    <div class="footer-bottom">
-      <p >&copy; 2025 Derivium. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Disclaimer</a>
-        <a href="#">Privacy Policy</a>
-        <a href="/src/pages/about.html">About</a>
-      </div>
-    </div>
-  </footer>
-<!-- ========== FOOTER END ========== -->
-
-<!-- ========== JAVSACRIPT CDN/SCRIPTS ========== -->  
-  <script type="module" src="/src/main.js"></script>
-</body>
-</html>
+        // Subtle parallax effect for the "Precision in Progress" text
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) / 100;
+            const moveY = (e.clientY - window.innerHeight / 2) / 100;
+            const hero = document.querySelector('h1');
+            if(hero) {
+                hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    </script>
+</body></html>
