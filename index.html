@@ -1,253 +1,467 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Derivium | Precision in Progress</title>
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "error-container": "#ffdad6",
-                    "tertiary-fixed": "#d2e4ff",
-                    "on-surface-variant": "#414846",
-                    "secondary-container": "#e6e2db",
-                    "surface-bright": "#fcf9f8",
-                    "on-primary-fixed-variant": "#304c45",
-                    "mint-accent": "#E2FFEF",
-                    "primary-fixed-dim": "#aecdc4",
-                    "on-tertiary-container": "#418cd8",
-                    "secondary-fixed-dim": "#cac6bf",
-                    "surface-container": "#f0eded",
-                    "warning-gold": "#FCB900",
-                    "surface-variant": "#e5e2e1",
-                    "tertiary-fixed-dim": "#a0c9ff",
-                    "tertiary-container": "#002240",
-                    "surface-dim": "#dcd9d9",
-                    "surface": "#fcf9f8",
-                    "surface-container-highest": "#e5e2e1",
-                    "secondary": "#605e59",
-                    "on-secondary-fixed": "#1d1c18",
-                    "on-tertiary-fixed": "#001c37",
-                    "primary": "#000d0a",
-                    "on-background": "#1b1c1c",
-                    "secondary-fixed": "#e6e2db",
-                    "primary-container": "#082620",
-                    "inverse-primary": "#aecdc4",
-                    "on-secondary-fixed-variant": "#484742",
-                    "on-primary-fixed": "#02201a",
-                    "inverse-surface": "#303030",
-                    "peach-highlight": "#FCF0E0",
-                    "surface-tint": "#47645c",
-                    "on-primary": "#ffffff",
-                    "on-tertiary-fixed-variant": "#00497f",
-                    "surface-container-lowest": "#ffffff",
-                    "error": "#ba1a1a",
-                    "tertiary": "#000b1a",
-                    "on-tertiary": "#ffffff",
-                    "primary-fixed": "#cae9df",
-                    "hot-pink": "#F78DA7",
-                    "background": "#fcf9f8",
-                    "outline": "#727976",
-                    "surface-container-low": "#f6f3f2",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-container": "#66645f",
-                    "on-error-container": "#93000a",
-                    "on-error": "#ffffff",
-                    "on-surface": "#1b1c1c",
-                    "on-primary-container": "#718f86",
-                    "error-red": "#CF2E2E",
-                    "surface-container-high": "#eae7e7",
-                    "inverse-on-surface": "#f3f0ef",
-                    "outline-variant": "#c1c8c5"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "lg": "44px",
-                    "gutter": "16px",
-                    "xs": "8px",
-                    "sm": "16px",
-                    "md": "24px",
-                    "xl": "60px",
-                    "container-max": "1216px",
-                    "base": "4px"
-            },
-            "fontFamily": {
-                    "headline-md": ["Anton"],
-                    "helper-text": ["Inter"],
-                    "eyebrow": ["Inter"],
-                    "button": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "display-hero-mobile": ["Anton"],
-                    "headline-lg": ["Anton"],
-                    "headline-lg-mobile": ["Anton"],
-                    "display-hero": ["Anton"],
-                    "body-md": ["Inter"]
-            },
-            "fontSize": {
-                    "headline-md": ["24px", {"lineHeight": "31.2px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
-                    "helper-text": ["12px", {"lineHeight": "19.2px", "letterSpacing": "0px", "fontWeight": "400"}],
-                    "eyebrow": ["18px", {"lineHeight": "21.6px", "letterSpacing": "0px", "fontWeight": "400"}],
-                    "button": ["15px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
-                    "label-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0px", "fontWeight": "500"}],
-                    "display-hero-mobile": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
-                    "headline-lg": ["36px", {"lineHeight": "43.2px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
-                    "display-hero": ["128px", {"lineHeight": "128px", "letterSpacing": "-1px", "fontWeight": "400"}],
-                    "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "400"}]
-            }
-          },
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "error-container": "#ffdad6",
+          "tertiary-fixed": "#d2e4ff",
+          "on-surface-variant": "#414846",
+          "secondary-container": "#e6e2db",
+          "surface-bright": "#fcf9f8",
+          "on-primary-fixed-variant": "#304c45",
+          "mint-accent": "#E2FFEF",
+          "primary-fixed-dim": "#aecdc4",
+          "on-tertiary-container": "#418cd8",
+          "secondary-fixed-dim": "#cac6bf",
+          "surface-container": "#f0eded",
+          "warning-gold": "#FCB900",
+          "surface-variant": "#e5e2e1",
+          "tertiary-fixed-dim": "#a0c9ff",
+          "tertiary-container": "#002240",
+          "surface-dim": "#dcd9d9",
+          "surface": "#fcf9f8",
+          "surface-container-highest": "#e5e2e1",
+          "secondary": "#605e59",
+          "on-secondary-fixed": "#1d1c18",
+          "on-tertiary-fixed": "#001c37",
+          "primary": "#000d0a",
+          "on-background": "#1b1c1c",
+          "secondary-fixed": "#e6e2db",
+          "primary-container": "#082620",
+          "inverse-primary": "#aecdc4",
+          "on-secondary-fixed-variant": "#484742",
+          "on-primary-fixed": "#02201a",
+          "inverse-surface": "#303030",
+          "peach-highlight": "#FCF0E0",
+          "surface-tint": "#47645c",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed-variant": "#00497f",
+          "surface-container-lowest": "#ffffff",
+          "error": "#ba1a1a",
+          "tertiary": "#000b1a",
+          "on-tertiary": "#ffffff",
+          "primary-fixed": "#cae9df",
+          "hot-pink": "#F78DA7",
+          "background": "#fcf9f8",
+          "outline": "#727976",
+          "surface-container-low": "#f6f3f2",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#66645f",
+          "on-error-container": "#93000a",
+          "on-error": "#ffffff",
+          "on-surface": "#1b1c1c",
+          "on-primary-container": "#718f86",
+          "error-red": "#CF2E2E",
+          "surface-container-high": "#eae7e7",
+          "inverse-on-surface": "#f3f0ef",
+          "outline-variant": "#c1c8c5"
         },
+        borderRadius: {
+          "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"
+        },
+        spacing: {
+          "lg": "44px", "gutter": "16px", "xs": "8px", "sm": "16px", "md": "24px",
+          "xl": "60px", "container-max": "1216px", "base": "4px"
+        },
+        fontFamily: {
+          "headline-md": ["Anton"], "helper-text": ["Inter"], "eyebrow": ["Inter"],
+          "button": ["Inter"], "label-sm": ["Inter"], "display-hero-mobile": ["Anton"],
+          "headline-lg": ["Anton"], "headline-lg-mobile": ["Anton"],
+          "display-hero": ["Anton"], "body-md": ["Inter"]
+        },
+        fontSize: {
+          "headline-md": ["24px", {"lineHeight":"31.2px","letterSpacing":"-0.25px","fontWeight":"400"}],
+          "helper-text": ["12px", {"lineHeight":"19.2px","letterSpacing":"0px","fontWeight":"400"}],
+          "eyebrow": ["18px", {"lineHeight":"21.6px","letterSpacing":"0px","fontWeight":"400"}],
+          "button": ["15px", {"lineHeight":"20px","letterSpacing":"0px","fontWeight":"500"}],
+          "label-sm": ["12px", {"lineHeight":"18px","letterSpacing":"0px","fontWeight":"500"}],
+          "display-hero-mobile": ["56px", {"lineHeight":"60px","letterSpacing":"-0.5px","fontWeight":"400"}],
+          "headline-lg": ["36px", {"lineHeight":"43.2px","letterSpacing":"-0.5px","fontWeight":"400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight":"30px","letterSpacing":"-0.25px","fontWeight":"400"}],
+          "display-hero": ["128px", {"lineHeight":"128px","letterSpacing":"-1px","fontWeight":"400"}],
+          "body-md": ["15px", {"lineHeight":"24px","letterSpacing":"0px","fontWeight":"400"}]
+        }
       }
-    </script>
+    }
+  }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .tonal-layer {
-            background-color: #fcf9f8;
-            border: 1px solid #F2F2F2;
-        }
-        .canvas-bg {
-            background: radial-gradient(circle at top right, #E2FFEF 0%, transparent 40%),
-                        radial-gradient(circle at bottom left, #FCF0E0 0%, transparent 40%);
-        }
-        .cursor-glow {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(226, 255, 239, 0.4) 0%, transparent 70%);
-            position: fixed;
-            pointer-events: none;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease;
-        }
-    </style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .canvas-bg {
+    background: radial-gradient(circle at top right, #E2FFEF 0%, transparent 40%),
+                radial-gradient(circle at bottom left, #FCF0E0 0%, transparent 40%);
+  }
+  .cursor-glow {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(226, 255, 239, 0.45) 0%, transparent 70%);
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+  }
+
+  /* ── Entry animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.7); }
+  }
+  @keyframes flip {
+    0%   { transform: rotateX(0deg); }
+    50%  { transform: rotateX(-90deg); }
+    100% { transform: rotateX(0deg); }
+  }
+
+  .anim-fadeUp       { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  .anim-fadeIn       { animation: fadeIn 0.6s ease both; }
+  .anim-slideLeft    { animation: slideInLeft 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  .anim-slideRight   { animation: slideInRight 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  .anim-scaleIn      { animation: scaleIn 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-800 { animation-delay: 0.8s; }
+
+  /* Countdown flip card */
+  .flip-card {
+    perspective: 600px;
+    display: inline-block;
+  }
+  .flip-inner {
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    transform-style: preserve-3d;
+  }
+  .flipping .flip-inner {
+    animation: flip 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* Digit block */
+  .digit-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .digit-value {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(36px, 8vw, 80px);
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #E2FFEF;
+    background: #082620;
+    padding: 16px 20px 12px;
+    min-width: clamp(70px, 14vw, 120px);
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(174,205,196,0.15);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .digit-value::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(0,0,0,0.35);
+    pointer-events: none;
+  }
+  .digit-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #718f86;
+  }
+  .digit-sep {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(36px, 8vw, 80px);
+    color: rgba(174,205,196,0.3);
+    line-height: 1;
+    padding-bottom: 22px;
+    align-self: flex-end;
+  }
+
+  /* Ticker tape */
+  .ticker-wrap {
+    overflow: hidden;
+    width: 100%;
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 24s linear infinite;
+  }
+  .ticker-track span {
+    white-space: nowrap;
+    padding-right: 48px;
+  }
+
+  /* Live indicator dot */
+  .live-dot {
+    width: 8px; height: 8px;
+    background: #E2FFEF;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 1.4s ease-in-out infinite;
+  }
+
+  /* Email card hover */
+  .email-card {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .email-card:hover {
+    box-shadow: 0 8px 40px rgba(8,38,32,0.10);
+    transform: translateY(-2px);
+  }
+
+  /* Footer links */
+  .footer-link {
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Responsive hero text */
+  @media (max-width: 480px) {
+    .digit-value { font-size: 32px; padding: 12px 14px 10px; min-width: 60px; }
+    .digit-sep   { font-size: 32px; }
+  }
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden canvas-bg min-h-screen flex flex-col">
+
 <div class="cursor-glow opacity-0" id="glow"></div>
-<!-- TopAppBar -->
-<header class="w-full top-0 bg-surface dark:bg-surface-dim z-50">
-<div class="flex justify-center items-center py-md w-full px-gutter max-w-container-max mx-auto">
-<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary tracking-tight">Derivium</span>
-</div>
+
+<!-- ── Header ── -->
+<header class="w-full top-0 bg-surface z-50 anim-fadeIn">
+  <div class="flex justify-center items-center py-md w-full px-gutter max-w-container-max mx-auto">
+    <span class="font-headline-md text-headline-md text-primary tracking-tight">Derivium</span>
+  </div>
 </header>
+
+<!-- ── Main ── -->
 <main class="flex-grow flex items-center justify-center px-gutter py-xl relative z-10">
-<div class="max-w-container-max w-full flex flex-col items-center text-center">
-<!-- Hero Section -->
-<div class="mb-xl">
-<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-primary uppercase tracking-tighter leading-none mb-md">
-                    PRECISION IN <br class="hidden md:block"/> PROGRESS
-                </h1>
-<p class="font-eyebrow text-eyebrow text-secondary max-w-2xl mx-auto">
-                    We are fine-tuning our engine to bring you the next generation of mathematical precision.
-                </p>
-</div>
-<!-- Bento Layout Content -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-md w-full max-w-4xl">
-<!-- Countdown/Live Date: High Contrast -->
-<div class="md:col-span-12 bg-primary-container p-xl flex flex-col items-center justify-center relative overflow-hidden group">
-<div class="absolute inset-0 opacity-10">
-<img class="w-full h-full object-cover" data-alt="A sophisticated macro shot of complex mathematical equations etched in glass with high-energy neon green lighting. The background is a deep, dark forest green, creating a sharp professional contrast with the glowing formula lines. The mood is high-tech, focused, and suggests advanced computational power." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVjCfjx9egQ_DURFKS47UBHncx0-yC3Qg8tL8ljySj2uf4K2De67om_ZmlE9goI2bve24YtHOzKcX8urSSTLXkNWydHs-m5E22-5cbd4JehOLpQ5oLc_llt-G5VH7mhF1n9NxYjlBz3FAQqEc8otqd-3mN2d_hD0vTypsRM9aRpFFHoXD2fvMF3Nxic9Oscj7cy0LxwPnU_URBIwJMpMe0FRyB7pBkbaw_7YBmxMGAjwNK56zUeRvuo7Gd6pmUmWIIZwwF59SzWfs"/>
-</div>
-<div class="relative z-10 text-center">
-<span class="font-label-sm text-label-sm text-on-primary-container mb-xs uppercase tracking-widest block">System Restoration</span>
-<h2 class="font-headline-lg text-headline-lg md:text-[48px] text-on-primary uppercase leading-none">
-                            BACK LIVE: JULY 7, 2026 <span class="text-mint-accent opacity-50 px-2">|</span> 12:00 AM
-                        </h2>
-</div>
-</div>
-<!-- Contact Card: Warm Background -->
-<div class="md:col-span-7 bg-peach-highlight p-md text-left flex flex-col justify-between border border-[#F2F2F2]">
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-sm">Contact Support</h3>
-<p class="text-secondary font-body-md mb-md">Our team is available for urgent architectural inquiries during the maintenance window.</p>
-</div>
-<div class="space-y-sm">
-<div class="flex items-center gap-xs">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">mail</span>
-<a class="font-button text-button text-primary hover:underline" href="mailto:hello@derivium.io">primormagency@gmail.com</a>
-</div>
-<div class="flex items-center gap-xs">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">call</span>
-<span class="font-button text-button text-primary">+1 (555) 000-4122</span>
-</div>
-</div>
-</div>
-<!-- Location Card -->
-<div class="md:col-span-5 bg-surface-container-lowest p-md border border-[#F2F2F2] flex flex-col justify-between">
-<div class="mb-md">
-<span class="material-symbols-outlined text-primary mb-xs" style="font-variation-settings: 'FILL' 1;">location_on</span>
-<p class="font-label-sm text-label-sm uppercase text-secondary mb-xs">Headquarters</p>
-<p class="font-body-md text-primary leading-tight">Mathematical Research Center,<br/>128 Quantum Plaza,<br/>San Francisco, CA 94103</p>
-</div>
-<button class="bg-primary text-on-primary border border-[#1E73BE] h-[45px] px-md font-button text-button uppercase tracking-wider flex items-center justify-center gap-xs hover:scale-95 transition-all duration-150">
-                        View Map <span class="material-symbols-outlined text-sm">north_east</span>
-</button>
-</div>
-</div>
-<!-- Visual Accent - The Engine -->
-<div class="mt-xl opacity-20 pointer-events-none select-none">
-<div class="flex gap-md overflow-hidden animate-pulse">
-<span class="font-headline-lg text-headline-lg text-primary">0010110</span>
-<span class="font-headline-lg text-headline-lg text-primary">Σ INTEGRATE</span>
-<span class="font-headline-lg text-headline-lg text-primary">PRECISION</span>
-</div>
-</div>
-</div>
+  <div class="max-w-4xl w-full flex flex-col items-center text-center">
+
+    <!-- Hero -->
+    <div class="mb-xl">
+      <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-primary uppercase tracking-tighter leading-none mb-md anim-fadeUp delay-100" id="hero-text">
+        PRECISION IN<br class="hidden md:block"/> PROGRESS
+      </h1>
+      <p class="font-eyebrow text-eyebrow text-secondary max-w-2xl mx-auto anim-fadeUp delay-300">
+        We are fine-tuning our engine to bring you the next generation of mathematical precision.
+      </p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-md w-full">
+
+      <!-- ── Countdown card ── -->
+      <div class="md:col-span-12 bg-primary-container p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center relative overflow-hidden anim-scaleIn delay-400">
+        <!-- decorative bg image -->
+        <div class="absolute inset-0 opacity-[0.07] pointer-events-none">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVjCfjx9egQ_DURFKS47UBHncx0-yC3Qg8tL8ljySj2uf4K2De67om_ZmlE9goI2bve24YtHOzKcX8urSSTLXkNWydHs-m5E22-5cbd4JehOLpQ5oLc_llt-G5VH7mhF1n9NxYjlBz3FAQqEc8otqd-3mN2d_hD0vTypsRM9aRpFFHoXD2fvMF3Nxic9Oscj7cy0LxwPnU_URBIwJMpMe0FRyB7pBkbaw_7YBmxMGAjwNK56zUeRvuo7Gd6pmUmWIIZwwF59SzWfs" alt=""/>
+        </div>
+
+        <div class="relative z-10 w-full flex flex-col items-center gap-6">
+          <!-- label row -->
+          <div class="flex items-center gap-3">
+            <span class="live-dot"></span>
+            <span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">System Restoration · Back Live July 7, 2026</span>
+          </div>
+
+          <!-- countdown digits -->
+          <div class="flex items-end gap-2 sm:gap-4" id="countdown-display">
+            <div class="digit-block">
+              <div class="digit-value flip-card" id="d-days"><span class="flip-inner" id="v-days">00</span></div>
+              <span class="digit-label">Days</span>
+            </div>
+            <div class="digit-sep">:</div>
+            <div class="digit-block">
+              <div class="digit-value flip-card" id="d-hours"><span class="flip-inner" id="v-hours">00</span></div>
+              <span class="digit-label">Hours</span>
+            </div>
+            <div class="digit-sep">:</div>
+            <div class="digit-block">
+              <div class="digit-value flip-card" id="d-mins"><span class="flip-inner" id="v-mins">00</span></div>
+              <span class="digit-label">Minutes</span>
+            </div>
+            <div class="digit-sep">:</div>
+            <div class="digit-block">
+              <div class="digit-value flip-card" id="d-secs"><span class="flip-inner" id="v-secs">00</span></div>
+              <span class="digit-label">Seconds</span>
+            </div>
+          </div>
+
+          <!-- target date line -->
+          <p class="font-label-sm text-label-sm text-on-primary-container opacity-60 tracking-widest uppercase">
+            12 : 00 AM · July 7, 2026
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Email / contact card ── -->
+      <div class="md:col-span-12 bg-peach-highlight p-md text-left flex flex-col sm:flex-row sm:items-center sm:justify-between gap-md border border-[#F2F2F2] email-card anim-slideLeft delay-600">
+        <div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-2">Contact Support</h3>
+          <p class="text-secondary font-body-md">Our team is available for urgent inquiries during the maintenance window.</p>
+        </div>
+        <a href="mailto:primormagency@gmail.com"
+           class="inline-flex items-center gap-xs bg-primary text-on-primary px-md h-[45px] font-button text-button uppercase tracking-wider hover:scale-95 transition-all duration-150 shrink-0 whitespace-nowrap">
+          <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">mail</span>
+          primormagency@gmail.com
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ── Ticker tape accent ── -->
+    <div class="mt-xl opacity-20 pointer-events-none select-none w-full overflow-hidden anim-fadeIn delay-800">
+      <div class="ticker-wrap">
+        <div class="ticker-track font-headline-lg text-headline-lg text-primary">
+          <span>0010110</span>
+          <span>Σ INTEGRATE</span>
+          <span>PRECISION</span>
+          <span>∂ DERIVE</span>
+          <span>∞ COMPUTE</span>
+          <span>π SOLVE</span>
+          <span>0010110</span>
+          <span>Σ INTEGRATE</span>
+          <span>PRECISION</span>
+          <span>∂ DERIVE</span>
+          <span>∞ COMPUTE</span>
+          <span>π SOLVE</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </main>
-<!-- Footer -->
-<footer class="w-full bottom-0 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
-<div class="flex flex-col md:flex-row justify-between items-center py-xl w-full px-gutter max-w-container-max mx-auto gap-md">
-<div class="flex flex-col items-center md:items-start gap-xs">
-<span class="font-headline-md text-headline-md text-primary">Derivium</span>
-<p class="font-label-sm text-label-sm text-secondary">© 2026 Derivium Mathematical Systems. All rights reserved.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-md">
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Security Architecture</a>
-<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact Support</a>
-</div>
-</div>
+
+<!-- ── Footer ── -->
+<footer class="w-full bg-surface border-t border-outline-variant anim-fadeIn delay-700">
+  <div class="flex flex-col md:flex-row justify-between items-center py-xl w-full px-gutter max-w-container-max mx-auto gap-md">
+    <div class="flex flex-col items-center md:items-start gap-xs">
+      <span class="font-headline-md text-headline-md text-primary">Derivium</span>
+      <p class="font-label-sm text-label-sm text-secondary">© 2026 Derivium Mathematical Systems. All rights reserved.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-md">
+      <a class="footer-link font-label-sm text-label-sm text-secondary hover:text-primary opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+      <a class="footer-link font-label-sm text-label-sm text-secondary hover:text-primary opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+      <a class="footer-link font-label-sm text-label-sm text-secondary hover:text-primary opacity-80 hover:opacity-100" href="#">Security Architecture</a>
+      <a class="footer-link font-label-sm text-label-sm text-secondary hover:text-primary opacity-80 hover:opacity-100" href="#">Contact Support</a>
+    </div>
+  </div>
 </footer>
+
 <script>
-        // Micro-interaction for cursor glow
-        const glow = document.getElementById('glow');
-        document.addEventListener('mousemove', (e) => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-            glow.style.opacity = '1';
-        });
+  // ── Cursor glow ──
+  const glow = document.getElementById('glow');
+  document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top  = e.clientY + 'px';
+    glow.style.opacity = '1';
+  });
+  document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
 
-        document.addEventListener('mouseleave', () => {
-            glow.style.opacity = '0';
-        });
+  // ── Subtle parallax on hero ──
+  document.addEventListener('mousemove', (e) => {
+    const mx = (e.clientX - window.innerWidth  / 2) / 120;
+    const my = (e.clientY - window.innerHeight / 2) / 120;
+    const h1 = document.getElementById('hero-text');
+    if (h1) h1.style.transform = `translate(${mx}px, ${my}px)`;
+  });
 
-        // Subtle parallax effect for the "Precision in Progress" text
-        document.addEventListener('mousemove', (e) => {
-            const moveX = (e.clientX - window.innerWidth / 2) / 100;
-            const moveY = (e.clientY - window.innerHeight / 2) / 100;
-            const hero = document.querySelector('h1');
-            if(hero) {
-                hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            }
-        });
-    </script>
-</body></html>
+  // ── Countdown timer ──
+  const TARGET = new Date('2026-07-07T00:00:00').getTime();
+
+  const vDays  = document.getElementById('v-days');
+  const vHours = document.getElementById('v-hours');
+  const vMins  = document.getElementById('v-mins');
+  const vSecs  = document.getElementById('v-secs');
+
+  const dDays  = document.getElementById('d-days');
+  const dHours = document.getElementById('d-hours');
+  const dMins  = document.getElementById('d-mins');
+  const dSecs  = document.getElementById('d-secs');
+
+  const pad = n => String(n).padStart(2, '0');
+
+  function triggerFlip(cardEl, innerEl, newVal) {
+    const prev = innerEl.textContent;
+    if (prev === newVal) return;
+    cardEl.classList.add('flipping');
+    setTimeout(() => {
+      innerEl.textContent = newVal;
+      cardEl.classList.remove('flipping');
+    }, 250);
+  }
+
+  function tick() {
+    const now  = Date.now();
+    const diff = TARGET - now;
+
+    if (diff <= 0) {
+      [vDays, vHours, vMins, vSecs].forEach(el => el.textContent = '00');
+      return;
+    }
+
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000)  / 60000);
+    const secs  = Math.floor((diff % 60000)    / 1000);
+
+    triggerFlip(dDays,  vDays,  pad(days));
+    triggerFlip(dHours, vHours, pad(hours));
+    triggerFlip(dMins,  vMins,  pad(mins));
+    triggerFlip(dSecs,  vSecs,  pad(secs));
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
