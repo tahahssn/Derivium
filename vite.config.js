@@ -10,7 +10,6 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
 
         // All Pages here
-        'pages/2D-Graph': resolve(__dirname, 'src/pages/2D-Graph.html'),
         'pages/3D-Graph': resolve(__dirname, 'src/pages/3D-Graph.html'),
         'pages/about': resolve(__dirname, 'src/pages/about.html'),
         'pages/calculator': resolve(__dirname, 'src/pages/calculator.html'),
