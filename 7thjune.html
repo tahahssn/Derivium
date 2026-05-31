@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Derivium | From Limits to 3D Graphs</title>
+<meta name="description" content="Derivium makes calculus easy with interactive tools for solving limits, derivatives, and creating 2D/3D graphs—all in one intuitive platform."/>
+<link rel="icon" href="/public/D.svg" type="image/svg+xml"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "outline": "#727976",
+          "secondary-container": "#e6e2db",
+          "tertiary-fixed": "#d2e4ff",
+          "tertiary-container": "#002240",
+          "surface-container-low": "#f6f3f2",
+          "surface": "#fcf9f8",
+          "on-surface": "#1b1c1c",
+          "background": "#fcf9f8",
+          "error-red": "#CF2E2E",
+          "on-background": "#1b1c1c",
+          "on-tertiary-container": "#418cd8",
+          "on-secondary-fixed": "#1d1c18",
+          "on-secondary": "#ffffff",
+          "on-primary": "#ffffff",
+          "mint-accent": "#E2FFEF",
+          "surface-container-highest": "#e5e2e1",
+          "on-secondary-fixed-variant": "#484742",
+          "surface-bright": "#fcf9f8",
+          "outline-variant": "#c1c8c5",
+          "primary": "#000d0a",
+          "tertiary-fixed-dim": "#a0c9ff",
+          "inverse-primary": "#aecdc4",
+          "on-primary-fixed-variant": "#304c45",
+          "on-primary-container": "#718f86",
+          "secondary-fixed-dim": "#cac6bf",
+          "secondary-fixed": "#e6e2db",
+          "tertiary": "#000b1a",
+          "surface-tint": "#47645c",
+          "on-error-container": "#93000a",
+          "on-surface-variant": "#414846",
+          "primary-container": "#082620",
+          "inverse-on-surface": "#f3f0ef",
+          "on-tertiary-fixed-variant": "#00497f",
+          "surface-dim": "#dcd9d9",
+          "error-container": "#ffdad6",
+          "secondary": "#605e59",
+          "on-tertiary-fixed": "#001c37",
+          "inverse-surface": "#303030",
+          "on-primary-fixed": "#02201a",
+          "warning-gold": "#FCB900",
+          "peach-highlight": "#FCF0E0",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-secondary-container": "#66645f",
+          "surface-variant": "#e5e2e1",
+          "hot-pink": "#F78DA7",
+          "surface-container": "#f0eded",
+          "on-error": "#ffffff",
+          "primary-fixed": "#cae9df",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#aecdc4",
+          "surface-container-high": "#eae7e7",
+          "cream-surface": "#FEF9F2"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "base": "4px",
+          "container-max": "1216px",
+          "xl": "60px",
+          "md": "24px",
+          "sm": "16px",
+          "gutter": "16px",
+          "lg": "44px",
+          "xs": "8px"
+        },
+        "fontFamily": {
+          "headline-lg-mobile": ["Anton"],
+          "display-hero-mobile": ["Anton"],
+          "eyebrow": ["Inter"],
+          "label-sm": ["Inter"],
+          "display-hero": ["Anton"],
+          "helper-text": ["Inter"],
+          "headline-md": ["Anton"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Anton"],
+          "button": ["Inter"]
+        },
+        "fontSize": {
+          "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+          "display-hero-mobile": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+          "eyebrow": ["18px", {"lineHeight": "21.6px", "letterSpacing": "0px", "fontWeight": "400"}],
+          "label-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0px", "fontWeight": "500"}],
+          "display-hero": ["128px", {"lineHeight": "128px", "letterSpacing": "-1px", "fontWeight": "400"}],
+          "helper-text": ["12px", {"lineHeight": "19.2px", "letterSpacing": "0px", "fontWeight": "400"}],
+          "headline-md": ["24px", {"lineHeight": "31.2px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+          "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "400"}],
+          "headline-lg": ["36px", {"lineHeight": "43.2px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+          "button": ["15px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #FEF9F2; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .btn-primary-custom {
+    background-color: #082620;
+    color: #ffffff;
+    height: 45px;
+    padding: 0 24px;
+    border: 1px solid #1E73BE;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .btn-primary-custom:hover { opacity: 0.9; transform: translateY(-1px); }
+  .feature-card {
+    background-color: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    padding: 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  .feature-card:hover {
+    box-shadow: 0 10px 30px -10px rgba(0, 13, 10, 0.1);
+    transform: translateY(-4px);
+  }
+</style>
+</head>
+<body class="font-body-md text-on-surface">
+
+<!-- TopNavBar -->
+<header class="bg-background border-b border-surface-container-highest sticky top-0 z-50">
+  <nav class="flex justify-between items-center px-sm md:px-md h-[72px] w-full max-w-container-max mx-auto">
+    <div class="font-headline-md text-headline-md text-primary uppercase tracking-tighter">Derivium</div>
+    <div class="hidden md:flex items-center space-x-md">
+      <a class="text-secondary font-medium hover:text-primary transition-colors font-button text-button" href="/src/pages/calculator.html">Calculators</a>
+      <a class="text-secondary font-medium hover:text-primary transition-colors font-button text-button" href="/src/pages/calculator.html">Limits</a>
+      <a class="text-secondary font-medium hover:text-primary transition-colors font-button text-button" href="/src/pages/3D-Graph.html">Graphs</a>
+      <a class="text-secondary font-medium hover:text-primary transition-colors font-button text-button" href="/src/pages/about.html">About</a>
+    </div>
+    <div class="flex items-center space-x-sm">
+      <a href="/src/pages/getstarted.html" class="btn-primary-custom font-button text-button">Get Started</a>
+      <button class="md:hidden text-primary" id="mobile-menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div class="hidden md:hidden bg-background border-t border-surface-container-highest px-sm py-md space-y-sm" id="mobile-menu">
+    <a class="block text-secondary font-medium hover:text-primary transition-colors font-button text-button py-xs" href="/src/pages/calculator.html">Calculators</a>
+    <a class="block text-secondary font-medium hover:text-primary transition-colors font-button text-button py-xs" href="/src/pages/calculator.html">Limits</a>
+    <a class="block text-secondary font-medium hover:text-primary transition-colors font-button text-button py-xs" href="/src/pages/3D-Graph.html">Graphs</a>
+    <a class="block text-secondary font-medium hover:text-primary transition-colors font-button text-button py-xs" href="/src/pages/about.html">About</a>
+    <a class="block text-secondary font-medium hover:text-primary transition-colors font-button text-button py-xs" href="/src/pages/contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-xl pb-xl md:pt-[120px] md:pb-[120px]">
+    <div class="max-w-container-max mx-auto px-sm md:px-md flex flex-col items-center text-center">
+      <span class="font-eyebrow text-eyebrow text-primary-container mb-sm uppercase tracking-widest">Solve, Explore, Visualize</span>
+      <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-primary-container leading-none mb-md uppercase">
+        From Limits to<br class="hidden md:block"/> 3D Graphs
+      </h1>
+      <p class="max-w-[700px] font-body-md text-body-md text-secondary mb-lg">
+        Discover calculus in a new light. Solve limits, derivatives, and partial derivatives with ease, and bring equations to life through interactive graphs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-sm">
+        <a href="/src/pages/getstarted.html" class="btn-primary-custom px-xl font-button text-button h-[52px]">Get Started</a>
+        <a href="/src/pages/about.html" class="flex items-center justify-center px-md py-xs text-primary font-button text-button border border-outline-variant rounded-[4px] hover:bg-surface-container-low transition-colors">
+          View Documentation
+        </a>
+      </div>
+    </div>
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-full h-full opacity-5 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-tertiary-container rounded-full blur-[100px]"></div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-xl bg-surface-container-lowest">
+    <div class="max-w-container-max mx-auto px-sm md:px-md">
+      <div class="mb-xl">
+        <h2 class="font-headline-lg text-headline-lg text-primary-container uppercase">Powerful Features</h2>
+        <p class="font-body-md text-body-md text-secondary max-w-[600px]">Derivium simplifies calculus: from limits and derivatives to interactive 3D visualizations.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+        <!-- Limits Card -->
+        <a href="/src/pages/calculator.html" class="feature-card flex flex-col">
+          <div class="w-12 h-12 bg-mint-accent text-primary-container rounded-xl flex items-center justify-center mb-md">
+            <span class="material-symbols-outlined text-[28px]">all_inclusive</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary-container mb-xs uppercase">Limits</h3>
+          <p class="font-body-md text-body-md text-secondary">Calculate limits with precision across different types and cases.</p>
+        </a>
+        <!-- Derivatives Card -->
+        <a href="/src/pages/calculator.html" class="feature-card flex flex-col">
+          <div class="w-12 h-12 bg-tertiary-fixed text-primary-container rounded-xl flex items-center justify-center mb-md">
+            <span class="material-symbols-outlined text-[28px]">function</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary-container mb-xs uppercase">Derivatives</h3>
+          <p class="font-body-md text-body-md text-secondary">Supports partial, total, and higher-order derivatives seamlessly.</p>
+        </a>
+        <!-- 3D Graphs Card -->
+        <a href="/src/pages/3D-Graph.html" class="feature-card flex flex-col">
+          <div class="w-12 h-12 bg-secondary-fixed text-primary-container rounded-xl flex items-center justify-center mb-md">
+            <span class="material-symbols-outlined text-[28px]">3d_rotation</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary-container mb-xs uppercase">3D Graphs</h3>
+          <p class="font-body-md text-body-md text-secondary">Visualize complex functions in interactive and detailed 3D graphs.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Hero Illustration -->
+  <section class="max-w-container-max mx-auto px-sm md:px-md py-xl">
+    <div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden group bg-primary-container flex items-center justify-center">
+      <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-mint-accent via-transparent to-transparent"></div>
+      <div class="relative z-10 text-center text-white p-md">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest opacity-80 mb-xs">Interactive Engine</p>
+        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-md">Advanced Rendering</h3>
+        <a href="/src/pages/3D-Graph.html" class="inline-flex items-center gap-xs bg-white/10 border border-white/30 hover:bg-white/20 transition-colors px-md py-xs rounded-lg font-button text-button text-white">
+          <span class="material-symbols-outlined text-[20px]">3d_rotation</span>
+          Open 3D Viewer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supporters Section -->
+  <section class="py-xl border-t border-surface-container-highest">
+    <div class="max-w-container-max mx-auto px-sm md:px-md">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-xl">
+        <h2 class="font-headline-lg text-headline-lg text-primary-container uppercase">Our Dream Supporters</h2>
+        <p class="text-secondary font-body-md">Trusted by world-class academic and technology institutions.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-xl gap-x-md items-center">
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Wolfram</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">META</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Google</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Microsoft</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Khan Academy</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Coursera</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">OpenAI</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">IBM</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Apple</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Kaggle</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">Desmos</div>
+        <div class="text-primary-container font-headline-md opacity-40 hover:opacity-100 transition-opacity flex justify-center">MathWorks</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface border-t border-surface-container-highest">
+  <div class="flex flex-col md:flex-row justify-between items-center py-md px-sm md:px-md w-full max-w-container-max mx-auto">
+    <div class="flex flex-col items-center md:items-start mb-md md:mb-0">
+      <div class="font-headline-md text-headline-md text-primary uppercase mb-xs">Derivium</div>
+      <p class="font-body-md text-body-md text-secondary">© 2026 Derivium Mathematical Systems. All rights reserved.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-md">
+      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="/src/pages/terms-conditions.html">Terms &amp; Conditions</a>
+      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="/src/pages/disclaimer.html">Disclaimer</a>
+      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="/src/pages/privacy-policy.html">Privacy Policy</a>
+      <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100" href="/src/pages/about.html">About</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+
+  // Scroll animation for feature cards
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100');
+        entry.target.classList.remove('opacity-0', 'translate-y-4');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card').forEach(card => {
+    card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-500');
+    observer.observe(card);
+  });
+</script>
+</body>
+</html>
