@@ -1,209 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Derivium makes calculus easy with interactive tools for solving limits, derivatives, and creating 2D/3D graphs—all in one intuitive platform.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Derivium</title>
-  <link rel="icon" href="/public/D.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/assets/css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculators | Derivium</title>
+<link rel="icon" href="/public/D.svg" type="image/svg+xml"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-container": "#002240",
+                "mint-accent": "#E2FFEF",
+                "tertiary-fixed": "#d2e4ff",
+                "on-tertiary-fixed": "#001c37",
+                "tertiary": "#000b1a",
+                "surface-bright": "#fcf9f8",
+                "primary-fixed-dim": "#aecdc4",
+                "surface-container-high": "#eae7e7",
+                "hot-pink": "#F78DA7",
+                "on-error": "#ffffff",
+                "on-primary-fixed": "#02201a",
+                "warning-gold": "#FCB900",
+                "surface-tint": "#47645c",
+                "on-tertiary-container": "#418cd8",
+                "on-secondary-container": "#66645f",
+                "on-primary-container": "#718f86",
+                "on-primary": "#ffffff",
+                "peach-highlight": "#FCF0E0",
+                "error-container": "#ffdad6",
+                "secondary-fixed-dim": "#cac6bf",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#a0c9ff",
+                "primary-container": "#082620",
+                "on-surface": "#1b1c1c",
+                "surface-container": "#f0eded",
+                "error": "#ba1a1a",
+                "inverse-on-surface": "#f3f0ef",
+                "error-red": "#CF2E2E",
+                "background": "#fcf9f8",
+                "surface": "#fcf9f8",
+                "on-surface-variant": "#414846",
+                "on-secondary": "#ffffff",
+                "secondary-fixed": "#e6e2db",
+                "surface-dim": "#dcd9d9",
+                "on-error-container": "#93000a",
+                "on-primary-fixed-variant": "#304c45",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#00497f",
+                "on-secondary-fixed": "#1d1c18",
+                "outline-variant": "#c1c8c5",
+                "inverse-surface": "#303030",
+                "on-secondary-fixed-variant": "#484742",
+                "secondary": "#605e59",
+                "primary-fixed": "#cae9df",
+                "surface-container-highest": "#e5e2e1",
+                "secondary-container": "#e6e2db",
+                "surface-variant": "#e5e2e1",
+                "on-background": "#1b1c1c",
+                "inverse-primary": "#aecdc4",
+                "primary": "#000d0a",
+                "outline": "#727976",
+                "surface-container-low": "#f6f3f2"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "xs": "8px",
+                "container-max": "1216px",
+                "base": "4px",
+                "md": "24px",
+                "lg": "44px",
+                "xl": "60px",
+                "sm": "16px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "display-hero-mobile": ["Anton"],
+                "label-sm": ["Inter"],
+                "helper-text": ["Inter"],
+                "headline-lg-mobile": ["Anton"],
+                "headline-md": ["Anton"],
+                "display-hero": ["Anton"],
+                "eyebrow": ["Inter"],
+                "headline-lg": ["Anton"],
+                "button": ["Inter"],
+                "body-md": ["Inter"]
+        },
+        "fontSize": {
+                "display-hero-mobile": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0px", "fontWeight": "500"}],
+                "helper-text": ["12px", {"lineHeight": "19.2px", "letterSpacing": "0px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "31.2px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                "display-hero": ["128px", {"lineHeight": "128px", "letterSpacing": "-1px", "fontWeight": "400"}],
+                "eyebrow": ["18px", {"lineHeight": "21.6px", "letterSpacing": "0px", "fontWeight": "400"}],
+                "headline-lg": ["36px", {"lineHeight": "43.2px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+                "button": ["15px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
+                "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "400"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+  body {
+      background-color: #FEF9F2;
+      color: #1b1c1c;
+  }
+  .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .calculator-card {
+      background-color: #FCF0E0;
+      border: 1px solid #F2F2F2;
+  }
+  .custom-shadow {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+  .primary-btn {
+      background-color: #082620;
+      border: 1px solid #1E73BE;
+      color: white;
+      height: 44px;
+  }
+  .primary-btn:hover {
+      opacity: 0.9;
+  }
+  .input-field {
+      height: 44px;
+      border: 1px solid #F2F2F2;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+  }
+  .input-field:focus {
+      outline: 2px solid rgba(8, 38, 32, 0.2);
+      border-color: #082620;
+  }
+  .sticky-nav {
+      background-color: #fcf9f8;
+      border-bottom: 1px solid #eae7e7;
+  }
+  /* Required loader styles from original project */
+  .loader-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+  }
+  .pl__ring2, .pl__ring4, .pl__ring6 {
+    animation: ring 2s linear infinite;
+  }
+  .pl__ring4 { animation-direction: reverse; }
+  @keyframes ring {
+    0% { transform: rotate(-90deg); }
+    100% { transform: rotate(270deg); }
+  }
+  
+  /* Modal Styles */
+  .result-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; w-full h-full;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 100vh;
+  }
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    font-size: 1.5rem;
+  }
+  #close-modal {
+    position: absolute;
+    top: 10px; right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* LaTeX overrides */
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+  }
+</style>
 </head>
-<body>
- 
-<!-- ========== NAVBAR START ========== -->
-   <nav class="navbar">
-    <div class="logo">Derivium</div>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/src/pages/about.html">About</a>
-       <a href="/src/pages/contact.html">Contact</a>
+<body class="font-body-md text-body-md">
+
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 sticky-nav">
+  <div class="flex justify-between items-center h-[60px] px-md max-w-container-max mx-auto">
+    <a href="/index.html" class="font-headline-md text-headline-md text-primary">Derivium</a>
+    <nav class="hidden md:flex space-x-xl items-center">
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="/src/pages/calculator.html">Calculators</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-primary-container transition-colors duration-200" href="/src/pages/calculator.html">Limits</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-primary-container transition-colors duration-200" href="/src/pages/3D-Graph.html">Graphs</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-primary-container transition-colors duration-200" href="/src/pages/about.html">About</a>
+    </nav>
+    <div class="flex items-center space-x-sm">
+      <a href="/src/pages/getstarted.html" class="primary-btn flex items-center justify-center px-sm rounded-lg font-button text-button">Get Started</a>
     </div>
-    <button class="learn-more">
-      <span class="circle" aria-hidden="true">
-        <span class="icon arrow"></span>
-      </span>
-      <span class="button-text"><a href="/src/pages/getstarted.html">Get Started</a></span>
-    </button>
-    <i class="ri-menu-line nav-toggle"></i>
-  </nav>
-
-    <div class="mobile-menu">
-      <i class="ri-close-line mobile-close"></i>
-
-      <a href="/index.html">Home</a>
-      <a href="/src/pages/about.html">About</a>
-      <a href="/src/pages/contact.html">Contact</a>
-    </div>
-<!-- ========== NAVBAR END ========== -->
-
-<!-- ========== GET STARTED/CALCULATOR HERO SECTION START ========== -->
-<section class="get-hero">
-  <div class="get-hero-content">
-    <p class="get-tagline1 splitgettagline">Crush Calculus Fast</p>
-    <p class="get-desc">
-      Blast through calculus hurdles with our lightning-fast calculators for limits, derivatives, partial derivatives, and total derivatives. Just punch in your equation and boom—instant, spot-on answers! Tailored for students, educators, and pros who want quick wins without the hassle. Dive in and level up your math game today!
-    </p>
-
-    <!-- Scroll Down Arrow-->
-    <div class="scrolldown" style="--color: skyblue">
-      <div class="chevrons">
-        <div class="chevrondown"></div>
-        <div class="chevrondown"></div>
-      </div>
-    </div>
-  <canvas id="symbolCanvas"></canvas>
-</section>
-<!-- ========== GET STARTED/CALCULATOR HERO SECTION END========== -->
-
-<!-- ========== CALCULATOR START ========== -->
-<section class="calculator-section">
-  <div class="card calculator">
-    <div class="mac-header">
-      <span class="red"></span>
-      <span class="yellow"></span>
-      <span class="green"></span>
-    </div>
-
-    <h2 id="calc-title" class="card-title">Limit Calculator</h2>
-    <p id="calc-desc" class="card-description">
-      Enter your function below to calculate its limit at a given point.
-    </p>
-
-    <!-- Dropdown -->
-    <div class="select-container">
-      <label for="calc-mode">Select Calculator:</label>
-      <select id="calc-mode">
-        <option value="limit">Limit</option>
-        <option value="derivative">Derivative</option>
-        <option value="partial">Partial Derivative</option>
-        <option value="total">Total Derivative</option>
-      </select>
-    </div>
-
-    <!-- Equation Input -->
-    <div class="code-editor">
-      <label for="calc-equation">Equation:</label>
-      <input type="text" id="calc-equation" placeholder="e.g. x**2 + 3*x + 5" />
-    </div>
-
-    <!-- Variable & Point (dynamic) -->
-    <div class="input-row" id="extra-fields">
-      <div class="code-editor small">
-        <label for="calc-variable">Variable:</label>
-        <input type="text" id="calc-variable" placeholder="e.g. x" autocomplete="on" />
-      </div>
-      <div class="code-editor small" id="point-field">
-        <label for="calc-point">Point:</label>
-        <input type="text" id="calc-point" placeholder="e.g. oo (Infinity)" />
-      </div>
-    </div>
-
-    <!-- Calculate Button -->
-    <button class="calc-btn" id="calc-btn">Calculate</button>
-
-    <!-- Loader -->
-    <div id="loader" class="loader-container" style="display:none;">
-      <svg class="pl" width="128px" height="128px" viewBox="0 0 128 128">
-        <circle class="pl__ring2" cx="64" cy="64" r="52.5" fill="none"
-          stroke="hsl(13,90%,55%)" stroke-width="12"
-          transform="rotate(-90,64,64)" stroke-linecap="round"
-          stroke-dasharray="329.9 329.9" stroke-dashoffset="-329.3"></circle>
-        <circle class="pl__ring4" cx="64" cy="64" r="37.5" fill="none"
-          stroke="hsl(33,90%,55%)" stroke-width="9"
-          transform="rotate(-90,64,64)" stroke-linecap="round"
-          stroke-dasharray="254.5 254.5" stroke-dashoffset="-254"></circle>
-        <circle class="pl__ring6" cx="64" cy="64" r="22.5" fill="none"
-          stroke="hsl(53,90%,55%)" stroke-width="9"
-          transform="rotate(-90,64,64)" stroke-linecap="round"
-          stroke-dasharray="204.2 204.2" stroke-dashoffset="-203.9"></circle>
-      </svg>
-    </div>
-
-    <!-- Output -->
-    <div id="katex-output-container">
-    <div id="katex-output"></div>
-      <button id="expand-btn" class="expand-btn" style="display:none;">Expand Result</button>
-    </div>
-
-    <!-- Modal for fullscreen view -->
-    <div id="result-modal" class="result-modal">
-      <div class="modal-content">
-        <button id="close-modal">&times;</button>
-        <div id="modal-output"></div>
-      </div>
-    </div>
-
   </div>
-</section>
-<!-- ========== CALCULATOR END ========== -->
+</header>
 
-<!-- ========== FOOTER START ========== -->
-  <footer>
-    <!-- Logo + Tagline -->
-    <div class="footer-top">
-      <img src="/public/Derivium Logo.svg" alt="Derivium Logo" class="footer-logo">
-      <p class="footer-tagline">Powerful Calculations • Clean Visuals • Great Results</p>
-    </div>
+<main class="max-w-container-max mx-auto px-md py-xl">
+  <!-- Hero Section -->
+  <div class="mb-xl text-center md:text-left">
+    <h1 class="font-headline-lg text-headline-lg text-primary uppercase mb-xs">Advanced Calculus Engine</h1>
+    <p class="text-on-surface-variant max-w-2xl font-body-md text-body-md">Precise solutions for complex mathematical boundaries. Solve limits, derivatives, and partial equations with professional-grade rigor.</p>
+  </div>
 
-    <!-- Social Icons -->
-    <div class="footer-social">
-      <a href="https://github.com/TahaHassan-code/Derivium" target="_blank" class="social-btn github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-2.9.3-5.2-1.3-5.2-3.6
-          0-2 2.3-3.6 5.2-3.6 2.9-.3 5.2 1.3 5.2 3.6zm-33.8-10.8c-.7
-          2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2 3.6-2.9
-          6.5-2 2.9.7 4.9 2.9 4.2 4.9zm45.1-1.7c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
-          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm65.4
-          37.1c-8.1 0-14.6-6.2-14.6-14.6s6.5-14.6
-          14.6-14.6c8.1 0 14.6 6.2 14.6 14.6s-6.5 14.6-14.6
-          14.6zm82.8-44.2c-.7 2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2
-          3.6-2.9 6.5-2 2.9.7 4.9 2.9 4.2 4.9zm37.1 6.9c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
-          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm32.6-21.6c-2.9
-          0-5.2-2-5.2-4.9s2.3-4.9 5.2-4.9c2.9 0 5.2 2 5.2
-          4.9s-2.3 4.9-5.2 4.9zM248 8C111 8 0 119.1 0 256c0
-          110.9 71.7 205.1 171.3 238.4 12.8 2.3 17.4-5.5
-          17.4-12.2 0-6.2-.3-22.5-.3-44.2-70.1
-          15.2-84.9-33.9-84.9-33.9-11.6-29.6-28.4-37.4-28.4-37.4-23.2-15.9
-          1.7-15.6 1.7-15.6 25.8 1.7 39.4 26.5 39.4
-          26.5 22.9 39.4 59.8 28.1 74.4 21.5 2.3-16.5 8.8-28.1
-          16.2-34.7-55.9-6.2-114.6-28.1-114.6-124.9
-          0-27.4 9.7-49.9 25.8-67.5-2.6-6.2-11.2-31.3
-          2.6-65.1 0 0 21.2-6.8 69.1 26.1
-          20.3-5.5 41.7-8.4 63-8.4s42.7 2.9
-          63 8.4c47.9-33.2 69.1-26.1
-          69.1-26.1 13.8 33.9 5.2 58.9
-          2.6 65.1 16.2 17.7 25.8 40.1
-          25.8 67.5 0 97.1-59.1 118.4-115.5
-          124.6 9.1 7.8 17.1 23.2 17.1
-          47.1 0 34.1-.3 61.6-.3 69.8 0
-          6.8 4.6 14.6 17.4 12.2C424.3
-          461.1 496 366.9 496 256
-          496 119.1 385 8 248 8z"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- Bottom -->
-    <div class="footer-bottom">
-      <p >&copy; 2025 Derivium. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">Terms</a>
-        <a href="#">License</a>
-        <a href="#">Privacy</a>
-        <a href="#">About Us</a>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-md">
+    <!-- Side Controls / History -->
+    <div class="lg:col-span-4 space-y-md">
+      <div class="bg-white p-md border border-[#F2F2F2] rounded-lg">
+        <h3 class="font-headline-md text-headline-md mb-sm">Toolbox</h3>
+        <div class="space-y-sm">
+          <button class="w-full text-left px-sm py-xs bg-mint-accent text-primary font-bold rounded flex items-center justify-between border border-primary" onclick="switchMode('limit')">
+            <span>Limits</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+          <button class="w-full text-left px-sm py-xs hover:bg-surface-container transition-colors rounded flex items-center justify-between" onclick="switchMode('derivative')">
+            <span>Derivatives</span>
+            <span class="material-symbols-outlined text-[18px]">function</span>
+          </button>
+          <button class="w-full text-left px-sm py-xs hover:bg-surface-container transition-colors rounded flex items-center justify-between" onclick="switchMode('partial')">
+            <span>Partial Derivatives</span>
+            <span class="material-symbols-outlined text-[18px]">variables</span>
+          </button>
+          <button class="w-full text-left px-sm py-xs hover:bg-surface-container transition-colors rounded flex items-center justify-between" onclick="switchMode('total')">
+            <span>Total Derivatives</span>
+            <span class="material-symbols-outlined text-[18px]">calculate</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="bg-white p-md border border-[#F2F2F2] rounded-lg relative overflow-hidden h-[280px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent"></div>
+        <h3 class="font-headline-md text-headline-md mb-sm relative z-10">Contextual Documentation</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant relative z-10">Need help with notation? Our API supports standard expressions like <code>sin(x)/x</code> and <code>x**2</code>. Ensure variables are explicitly declared for partial differentiation.</p>
       </div>
     </div>
-  </footer>
-<!-- ========== FOOTER END ========== -->
 
-  <!-- ========== JAVSACRIPT CDN/SCRIPTS ========== -->
-  <script type="module" src="/src/assets/js/script.js"></script>
+    <!-- Main Calculator Area -->
+    <div class="lg:col-span-8">
+      <div class="calculator-card p-xl rounded-xl custom-shadow min-h-[500px] flex flex-col">
+        <div class="mb-xl">
+          <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-xs block">Active Mode</span>
+          <h2 class="font-headline-lg text-headline-lg" id="calc-title">Limit Calculator</h2>
+          <p id="calc-desc" class="hidden">Calculate the limit of a function as the variable approaches a given point.</p>
+        </div>
+
+        <!-- Hidden Select for existing calculator.js to function -->
+        <select id="calc-mode" style="display: none;">
+          <option value="limit" selected>Limit</option>
+          <option value="derivative">Derivative</option>
+          <option value="partial">Partial</option>
+          <option value="total">Total</option>
+        </select>
+
+        <div class="flex-grow space-y-md">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <div class="flex flex-col gap-xs md:col-span-2">
+              <label class="font-label-sm text-label-sm text-on-surface-variant">Function f(x)</label>
+              <input type="text" id="calc-equation" class="input-field rounded-lg px-sm w-full bg-white font-mono" placeholder="e.g. sin(x)/x" />
+            </div>
+
+            <!-- The wrapper div code-editor exists so calculator.js can use closest('.code-editor') to toggle it -->
+            <div class="flex flex-col gap-xs code-editor" id="variable-field-container">
+              <label class="font-label-sm text-label-sm text-on-surface-variant">Variable</label>
+              <input type="text" id="calc-variable" class="input-field rounded-lg px-sm w-full bg-white font-mono" placeholder="x" autocomplete="on" />
+            </div>
+            
+            <div class="flex flex-col gap-xs code-editor" id="point-field">
+              <label class="font-label-sm text-label-sm text-on-surface-variant">Approaching Value (c)</label>
+              <input type="text" id="calc-point" class="input-field rounded-lg px-sm w-full bg-white font-mono" placeholder="0 or oo" />
+            </div>
+          </div>
+
+          <div class="mt-xl flex flex-col md:flex-row items-center gap-md">
+            <button id="calc-btn" class="primary-btn w-full md:w-auto px-xl rounded-full font-button text-button uppercase tracking-tight shadow-md hover:scale-[1.02] transition-transform">
+              Calculate Result
+            </button>
+            <button class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:underline" onclick="document.getElementById('calc-equation').value=''; document.getElementById('calc-point').value=''; document.getElementById('katex-output').innerHTML='';">
+              Clear Workspace
+            </button>
+          </div>
+          
+          <!-- Loader -->
+          <div id="loader" class="loader-container">
+            <svg class="pl" width="64px" height="64px" viewBox="0 0 128 128">
+              <circle class="pl__ring2" cx="64" cy="64" r="52.5" fill="none" stroke="hsl(13,90%,55%)" stroke-width="12" stroke-linecap="round" stroke-dasharray="329.9 329.9" stroke-dashoffset="-329.3"></circle>
+              <circle class="pl__ring4" cx="64" cy="64" r="37.5" fill="none" stroke="hsl(33,90%,55%)" stroke-width="9" stroke-linecap="round" stroke-dasharray="254.5 254.5" stroke-dashoffset="-254"></circle>
+              <circle class="pl__ring6" cx="64" cy="64" r="22.5" fill="none" stroke="hsl(53,90%,55%)" stroke-width="9" stroke-linecap="round" stroke-dasharray="204.2 204.2" stroke-dashoffset="-203.9"></circle>
+            </svg>
+          </div>
+
+          <!-- Result Area -->
+          <div class="mt-xl pt-xl border-t border-outline-variant/30" id="katex-output-container">
+            <div class="bg-white p-md rounded-lg shadow-sm border border-[#F2F2F2] min-h-[100px]">
+              <div class="flex justify-between items-center mb-xs">
+                <p class="font-label-sm text-label-sm text-on-surface-variant">Result</p>
+                <button id="expand-btn" style="display:none;" class="text-xs text-primary underline hover:text-mint-accent transition-colors">Expand Fullscreen</button>
+              </div>
+              <div id="katex-output" class="text-lg font-bold text-primary overflow-x-auto py-2"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bento Style Information Grid -->
+      <div class="mt-md grid grid-cols-1 md:grid-cols-2 gap-md">
+        <div class="bg-white p-md border border-[#F2F2F2] rounded-lg">
+          <span class="material-symbols-outlined text-primary mb-sm">verified_user</span>
+          <h4 class="font-headline-md text-headline-md mb-xs">Verified Accuracy</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Algorithms tested against the Mathematica and SymPy benchmarks for 99.9% computational reliability.</p>
+        </div>
+        <div class="bg-white p-md border border-[#F2F2F2] rounded-lg">
+          <span class="material-symbols-outlined text-primary mb-sm">speed</span>
+          <h4 class="font-headline-md text-headline-md mb-xs">Real-time Parsing</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Instant evaluation. We use a high-performance Python cluster for algebraic operations.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Modal for fullscreen view -->
+<div id="result-modal" class="result-modal">
+  <div class="modal-content">
+    <button id="close-modal">&times;</button>
+    <div id="modal-output"></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w-full py-xl bg-surface-container border-t border-surface-container-highest">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-md px-md max-w-container-max mx-auto">
+    <div>
+      <div class="font-headline-md text-headline-md text-primary mb-sm">Derivium</div>
+      <p class="text-secondary font-body-md text-body-md">© 2026 Derivium. Precision in Motion.</p>
+    </div>
+    <div class="flex flex-col space-y-xs">
+      <h5 class="font-bold text-primary mb-xs">Platform</h5>
+      <a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+      <a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+      <a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm" href="/src/pages/contact.html">Contact Support</a>
+    </div>
+    <div class="flex flex-col space-y-xs">
+      <h5 class="font-bold text-primary mb-xs">Resources</h5>
+      <a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Calculus API</a>
+      <a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Community Forum</a>
+      <a class="text-secondary hover:text-primary transition-colors font-label-sm text-label-sm" href="https://github.com/TahaHassan-code/Derivium" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+<script>
+  function switchMode(mode) {
+      const buttons = document.querySelectorAll('.lg\\:col-span-4 button');
+      
+      // Visual feedback for buttons
+      buttons.forEach(btn => {
+          btn.classList.remove('bg-mint-accent', 'font-bold', 'border', 'border-primary');
+          btn.classList.add('hover:bg-surface-container');
+      });
+      event.currentTarget.classList.add('bg-mint-accent', 'font-bold', 'border', 'border-primary');
+
+      // Update hidden select for existing calculator.js
+      const selectMode = document.getElementById('calc-mode');
+      if(selectMode) {
+          selectMode.value = mode;
+          selectMode.dispatchEvent(new Event('change'));
+      }
+  }
+</script>
 </body>
 </html>

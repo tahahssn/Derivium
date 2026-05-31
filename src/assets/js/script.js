@@ -77,208 +77,65 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // FEATURES/SUPPORTERS/TEAM HEADING + PARAGRAPH SPLIT
-const splitHeading = new SplitText(".features-title", { type: "words,chars" });
-const suppoterSplitHeading = new SplitText(".marquee_header", { type: "words,chars" });
-const toolSplitHeading = new SplitText(".tool-tagline", { type: "words,chars" });
-const splitPara = new SplitText(".features-sub", { type: "words" });
-const splitTeamTitle = new SplitText(".team-title", { type: "words,chars" });
-const splitTeamPara = new SplitText(".team-desc", { type: "words" });
+try {
+  const featuresTitle = document.querySelector(".features-title");
+  if(featuresTitle) {
+    const splitHeading = new SplitText(".features-title", { type: "words,chars" });
+    gsap.from(splitHeading.chars, {
+      scrollTrigger: { trigger: ".features-title", start: "top 80%", end: "bottom 60%", scrub: 1 },
+      opacity: 0, y: 40, duration: 1.2, stagger: 0.05, ease: "power3.out"
+    });
+  }
 
-// FEATURES ANIMATION
-gsap.from(splitHeading.chars, {
-  scrollTrigger: {
-    trigger: ".features-title",
-    start: "top 80%",   // jab heading viewport ke andar aa jaye
-    end: "bottom 60%",
-    scrub: 1,
-    // pin: true,   // agar sticky chahiye toh enable kar
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1.2,
-  stagger: 0.05,
-  ease: "power3.out"
-});
+  const suppoterHeader = document.querySelector(".marquee_header");
+  if(suppoterHeader) {
+    const suppoterSplitHeading = new SplitText(".marquee_header", { type: "words,chars" });
+    gsap.from(suppoterSplitHeading.chars, {
+      scrollTrigger: { trigger: ".marquee_header", start: "top 80%", end: "bottom 60%", scrub: 1 },
+      opacity: 0, y: 40, duration: 1.2, stagger: 0.05, ease: "power3.out"
+    });
+  }
 
-gsap.from(splitPara.words, {
-  scrollTrigger: {
-    trigger: ".features-sub",
-    start: "top 85%",
-    end: "bottom 70%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
+  const toolTagline = document.querySelector(".tool-tagline");
+  if(toolTagline) {
+    const toolSplitHeading = new SplitText(".tool-tagline", { type: "words,chars" });
+    gsap.from(toolSplitHeading.chars, {
+      scrollTrigger: { trigger: ".tool-tagline", start: "top 80%", end: "bottom 60%", scrub: 1 },
+      opacity: 0, y: 40, duration: 1.2, stagger: 0.05, ease: "power3.out"
+    });
+  }
 
-gsap.from(".cards-grid", {
-  scrollTrigger: {
-    trigger: ".card-effect",
-    start: "top 85%",
-    end: "bottom 70%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
+  const featuresSub = document.querySelector(".features-sub");
+  if(featuresSub) {
+    const splitPara = new SplitText(".features-sub", { type: "words" });
+    gsap.from(splitPara.words, {
+      scrollTrigger: { trigger: ".features-sub", start: "top 85%", end: "bottom 70%", scrub: 1 },
+      opacity: 0, y: 20, duration: 1, stagger: 0.03, ease: "power2.out"
+    });
+  }
 
-// TOOLS HEADING ANIMATION
-gsap.from(toolSplitHeading.chars, {
-  scrollTrigger: {
-    trigger: ".tool-tagline",
-    start: "top 80%",   // jab heading viewport ke andar aa jaye
-    end: "bottom 60%",
-    scrub: 1,
-    // pin: true,   // agar sticky chahiye toh enable kar
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1.2,
-  stagger: 0.05,
-  ease: "power3.out"
-});
+  const teamTitle = document.querySelector(".team-title");
+  if(teamTitle) {
+    const splitTeamTitle = new SplitText(".team-title", { type: "words,chars" });
+    gsap.from(splitTeamTitle.chars, {
+      scrollTrigger: { trigger: ".team-title", start: "top 80%", end: "bottom 60%", scrub: 1 },
+      opacity: 0, y: 40, duration: 1.2, stagger: 0.05, ease: "power3.out"
+    });
+  }
 
-// TOOLS CARD ANIMATION
-gsap.from(".card-container", {
-  scrollTrigger: {
-    trigger: ".card",
-    start: "top 85%",
-    end: "bottom 70%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
+  const teamDesc = document.querySelector(".team-desc");
+  if(teamDesc) {
+    const splitTeamPara = new SplitText(".team-desc", { type: "words" });
+    gsap.from(splitTeamPara.words, {
+      scrollTrigger: { trigger: ".team-desc", start: "top 80%", end: "bottom 60%", scrub: 1 },
+      opacity: 0, y: 40, duration: 1.2, stagger: 0.05, ease: "power3.out"
+    });
+  }
+} catch(e) {
+  console.log('GSAP missing elements on this page.', e);
+}
 
-// TOOLS HEADING ANIMATION
-gsap.from(splitTeamTitle.chars, {
-  scrollTrigger: {
-    trigger: ".team-title",
-    start: "top 80%",   // jab heading viewport ke andar aa jaye
-    end: "bottom 60%",
-    scrub: 1,
-    // pin: true,   // agar sticky chahiye toh enable kar
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1.2,
-  stagger: 0.05,
-  ease: "power3.out"
-});
-
-gsap.from(splitTeamPara.words, {
-  scrollTrigger: {
-    trigger: ".team-desc",
-    start: "top 80%",   // jab heading viewport ke andar aa jaye
-    end: "bottom 60%",
-    scrub: 1,
-    // pin: true,   // agar sticky chahiye toh enable kar
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1.2,
-  stagger: 0.05,
-  ease: "power3.out"
-});
-
-// TEAMS CARD ANIMATION
-gsap.from(".team-container", {
-  scrollTrigger: {
-    trigger: ".team-card",
-    start: "top 85%",
-    end: "bottom 70%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
-
-//FOOTER ANIMATION
-gsap.from(".footer-social", {
-  scrollTrigger: {
-    trigger: ".social-btn",
-    start: "top 95%",
-    end: "bottom 90%",
-    scrub: 1,
-    //markers: true,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
-
-gsap.from(".footer-bottom", {
-  scrollTrigger: {
-    trigger: ".social-btn",
-    start: "top 95%",
-    end: "bottom 90%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
-
-gsap.from(".footer-top", {
-  scrollTrigger: {
-    trigger: ".footer-tagline",
-    start: "top 95%",
-    end: "bottom 90%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
-
-// ABOUT ANIMATION 
-gsap.from(".aboutbutton", {
-  scrollTrigger: {
-    trigger: ".about-btn",
-    start: "top 100%",
-    end: "bottom 70%",
-    scrub: 1,
-  },
-  opacity: 0,
-  y: 20,
-  duration: 1,
-  stagger: 0.03,
-  ease: "power2.out"
-});
-
-// SUPPORTER ANIMATION
-gsap.from(suppoterSplitHeading.chars, {
-  scrollTrigger: {
-    trigger: ".marquee_header",
-    start: "top 80%",   // jab heading viewport ke andar aa jaye
-    end: "bottom 60%",
-    scrub: 1,
-    // pin: true,   // agar sticky chahiye toh enable kar
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1.2,
-  stagger: 0.05,
-  ease: "power3.out"
-});
+// Handled above
 
 // Split text into letters
 // Split letters for heading & tagline
@@ -382,10 +239,11 @@ gsap.from('.svganimation', {
 // ANIMATED BACKGROUND FUNCTION 
 function heroAnimation(){
   const canvas = document.getElementById('symbolCanvas');
-const ctx = canvas.getContext('2d');
+  if(!canvas) return; // Exit if no canvas
+  const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
 const mouse = {x: -1000, y: -1000};
 window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
@@ -525,4 +383,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 heroAnimation();
 scrollAnimation();
-supporterMarqueeAnimation();
+// supporterMarqueeAnimation(); // undefined

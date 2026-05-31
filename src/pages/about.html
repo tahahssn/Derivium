@@ -1,368 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Derivium makes calculus easy with interactive tools for solving limits, derivatives, and creating 2D/3D graphs—all in one intuitive platform.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Derivium</title>
-  <link rel="icon" href="/public/D.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/assets/css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Derivium | Mathematical Precision</title>
+<meta name="description" content="Learn about Derivium — the mathematical platform built for precision engineering, limits, derivatives, and complex visualizations."/>
+<link rel="icon" href="/D.svg" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed-variant": "#484742",
+          "on-error-container": "#93000a",
+          "surface-container-low": "#f6f3f2",
+          "primary-fixed": "#cae9df",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#303030",
+          "error-container": "#ffdad6",
+          "on-background": "#1b1c1c",
+          "inverse-on-surface": "#f3f0ef",
+          "on-tertiary-fixed-variant": "#00497f",
+          "surface-container-high": "#eae7e7",
+          "on-surface": "#1b1c1c",
+          "outline": "#727976",
+          "inverse-primary": "#aecdc4",
+          "on-secondary": "#ffffff",
+          "surface-bright": "#fcf9f8",
+          "surface-container": "#f0eded",
+          "on-primary-fixed": "#02201a",
+          "secondary-fixed-dim": "#cac6bf",
+          "on-surface-variant": "#414846",
+          "surface-container-lowest": "#ffffff",
+          "secondary": "#605e59",
+          "surface-tint": "#47645c",
+          "on-secondary-fixed": "#1d1c18",
+          "tertiary-container": "#002240",
+          "primary": "#000d0a",
+          "peach-highlight": "#FCF0E0",
+          "primary-container": "#082620",
+          "tertiary-fixed-dim": "#a0c9ff",
+          "surface-dim": "#dcd9d9",
+          "secondary-container": "#e6e2db",
+          "primary-fixed-dim": "#aecdc4",
+          "on-tertiary-fixed": "#001c37",
+          "on-error": "#ffffff",
+          "warning-gold": "#FCB900",
+          "on-tertiary-container": "#418cd8",
+          "surface-variant": "#e5e2e1",
+          "surface-container-highest": "#e5e2e1",
+          "secondary-fixed": "#e6e2db",
+          "error": "#ba1a1a",
+          "tertiary": "#000b1a",
+          "mint-accent": "#E2FFEF",
+          "on-primary-fixed-variant": "#304c45",
+          "on-primary": "#ffffff",
+          "error-red": "#CF2E2E",
+          "surface": "#fcf9f8",
+          "hot-pink": "#F78DA7",
+          "background": "#fcf9f8",
+          "on-secondary-container": "#66645f",
+          "tertiary-fixed": "#d2e4ff",
+          "outline-variant": "#c1c8c5",
+          "on-primary-container": "#718f86"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "xl": "60px",
+          "md": "24px",
+          "gutter": "16px",
+          "xs": "8px",
+          "lg": "44px",
+          "sm": "16px",
+          "container-max": "1216px",
+          "base": "4px"
+        },
+        "fontFamily": {
+          "headline-md": ["Anton"],
+          "button": ["Inter"],
+          "headline-lg-mobile": ["Anton"],
+          "helper-text": ["Inter"],
+          "eyebrow": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-lg": ["Anton"],
+          "body-md": ["Inter"],
+          "display-hero-mobile": ["Anton"],
+          "display-hero": ["Anton"]
+        },
+        "fontSize": {
+          "headline-md": ["24px", {"lineHeight": "31.2px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+          "button": ["15px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+          "helper-text": ["12px", {"lineHeight": "19.2px", "letterSpacing": "0px", "fontWeight": "400"}],
+          "eyebrow": ["18px", {"lineHeight": "21.6px", "letterSpacing": "0px", "fontWeight": "400"}],
+          "label-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0px", "fontWeight": "500"}],
+          "headline-lg": ["36px", {"lineHeight": "43.2px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+          "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "400"}],
+          "display-hero-mobile": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.5px", "fontWeight": "400"}],
+          "display-hero": ["128px", {"lineHeight": "128px", "letterSpacing": "-1px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #FEF9F2; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .raised-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .raised-card:hover {
+    box-shadow: 0 4px 20px -2px rgba(0, 13, 10, 0.1);
+    transform: translateY(-2px);
+  }
+  .primary-btn {
+    height: 45px;
+    background-color: #082620;
+    color: #ffffff;
+    border: 1px solid #1E73BE;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    transition: all 0.2s;
+  }
+  .primary-btn:active { transform: scale(0.95); }
+</style>
 </head>
-<body>
- 
-<!-- ========== NAVBAR START ========== -->
-   <nav class="navbar">
-    <div class="logo">Derivium</div>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/src/pages/about.html">About</a>
-       <a href="/src/pages/contact.html">Contact</a>
+<body class="bg-surface text-on-surface font-body-md selection:bg-mint-accent selection:text-primary-container">
+
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant sticky top-0 z-50">
+  <nav class="flex justify-between items-center w-full px-xl h-xl max-w-container-max mx-auto">
+    <a href="/index.html" class="text-headline-md font-headline-md text-primary-container">Derivium</a>
+    <div class="hidden md:flex items-center gap-md">
+      <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-body-md text-body-md" href="/src/pages/calculator.html">Calculators</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-body-md text-body-md" href="/src/pages/calculator.html">Limits</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-body-md text-body-md" href="/src/pages/3D-Graph.html">Graphs</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-body-md text-body-md" href="/src/pages/contact.html">Contact</a>
+      <a class="text-primary-container font-bold border-b-2 border-primary-container font-body-md text-body-md" href="#">About</a>
     </div>
-    <button class="learn-more">
-      <span class="circle" aria-hidden="true">
-        <span class="icon arrow"></span>
-      </span>
-      <span class="button-text"><a href="/src/pages/getstarted.html">Get Started</a></span>
-    </button>
-    <i class="ri-menu-line nav-toggle"></i>
+    <a href="/src/pages/getstarted.html" class="primary-btn font-button text-button rounded">Get Started</a>
   </nav>
+</header>
 
-    <div class="mobile-menu">
-      <i class="ri-close-line mobile-close"></i>
-
-      <a href="/index.html">Home</a>
-      <a href="/src/pages/about.html">About</a>
-      <a href="/src/pages/contact.html">Contact</a>
+<main>
+  <!-- Hero Section -->
+  <section class="relative pt-xl pb-32 px-gutter overflow-hidden">
+    <div class="max-w-container-max mx-auto text-center relative z-10">
+      <h1 class="font-display-hero text-display-hero uppercase leading-none tracking-normal text-primary-container mb-md md:mb-0">
+        ABOUT DERIVIUM
+      </h1>
+      <div class="max-w-2xl mx-auto mt-xs">
+        <p class="font-body-md text-eyebrow text-on-surface-variant leading-relaxed">
+          Precision engineering meets mathematical elegance. We are building the most sophisticated computational engine for derivatives, limits, and complex visualizations, empowering the next generation of mathematicians and engineers.
+        </p>
+      </div>
     </div>
-<!-- ========== NAVBAR END ========== -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-5 pointer-events-none -z-0">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-container via-transparent to-transparent"></div>
+    </div>
+  </section>
 
-<!-- ========== ABOUT HERO SECTION START ========== -->
-  <section class="hero">
-    <div class="hero-content">
-    <p class="tagline split-text">About Derivium</p>
-    <p class="desc">Derivium is a futuristic platform designed to simplify complex calculus concepts.
-      From understanding the basics of limits to visualizing multivariable calculus, we
-      provide tools for students, educators, and professionals.</p>
-  </div>
-  <canvas id="symbolCanvas"></canvas>
-  
- <!-- From Uiverse.io by Nawsome --> 
-<div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster svganimation">
-	<div class="wheel"></div>
-	<div class="hamster">
-		<div class="hamster__body">
-			<div class="hamster__head">
-				<div class="hamster__ear"></div>
-				<div class="hamster__eye"></div>
-				<div class="hamster__nose"></div>
-			</div>
-			<div class="hamster__limb hamster__limb--fr"></div>
-			<div class="hamster__limb hamster__limb--fl"></div>
-			<div class="hamster__limb hamster__limb--br"></div>
-			<div class="hamster__limb hamster__limb--bl"></div>
-			<div class="hamster__tail"></div>
-		</div>
-	</div>
-	<div class="spoke"></div>
-</div>
-</section>
-<!-- ========== ABOUT HERO SECTION END ========== -->
-
-<!-- ========== FEATURES CARDS START ========== -->
-<section class="features-section">
-  <h2 class="features-title">Features</h2>
-  <p class="features-sub">
-    Derivium simplifies calculus: from limits and derivatives to
-    interactive 2D/3D visualizations.
-  </p>
-
-  <div class="cards-grid">
-    <!-- Card 01 -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#06b6d4;">
-            <span class="card-icon">∞</span>
+  <!-- Features Section (Bento Grid) -->
+  <section class="py-xl bg-surface-container-low px-gutter">
+    <div class="max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-md">
+        <!-- Limits Card -->
+        <div class="md:col-span-8 bg-surface border border-outline-variant p-md raised-card rounded-xl flex flex-col justify-between overflow-hidden">
+          <div>
+            <div class="w-12 h-12 bg-mint-accent flex items-center justify-center rounded-lg mb-sm text-primary-container">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary-container mb-xs uppercase">Limits</h3>
+            <p class="text-on-surface-variant max-w-md">Master the foundation of calculus with our rigorous limit evaluation engine, supporting one-sided limits and infinity approximations.</p>
           </div>
-          <div class="card__text">
-            <p class="card__title">Limits</p>
-            <p class="card__description">Calculate limits with precision across different types and cases.</p>
+          <div class="mt-md bg-primary-container rounded-lg h-48 flex items-center justify-center">
+            <div class="text-center text-white p-md">
+              <p class="font-label-sm text-label-sm uppercase tracking-widest text-mint-accent mb-xs">Limit Evaluation</p>
+              <p class="font-headline-md text-headline-md">lim<sub>x→0</sub> sin(x)/x = 1</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Card 02 -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#7c3aed;">
-            <span class="card-icon">∂</span>
+        <!-- Derivatives Card -->
+        <div class="md:col-span-4 bg-surface border border-outline-variant p-md raised-card rounded-xl flex flex-col">
+          <div class="w-12 h-12 bg-peach-highlight flex items-center justify-center rounded-lg mb-sm text-primary-container">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">function</span>
           </div>
-          <div class="card__text">
-            <p class="card__title">Derivatives</p>
-            <p class="card__description">Supports partial, total, and higher-order derivatives seamlessly.</p>
+          <h3 class="font-headline-md text-headline-md text-primary-container mb-xs uppercase">Derivatives</h3>
+          <p class="text-on-surface-variant mb-md">Step-by-step differentiation of complex functions with symbolic simplification and rule breakdown.</p>
+          <div class="mt-auto bg-surface-container p-sm rounded border border-outline-variant font-mono text-label-sm text-primary-container">
+            d/dx[sin(x²)] = 2x·cos(x²)
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Card 03 -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#10b981;">
-            <span class="card-icon">📈</span>
+        <!-- 3D Graphs -->
+        <div class="md:col-span-12 bg-surface border border-outline-variant p-md raised-card rounded-xl flex items-center gap-md">
+          <div class="flex-1">
+            <div class="w-12 h-12 bg-mint-accent flex items-center justify-center rounded-lg mb-sm text-primary-container">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary-container mb-xs uppercase">3D Graphs</h3>
+            <p class="text-on-surface-variant">Immersive multivariate visualization. Rotate, slice, and explore surfaces and vector fields in three-dimensional space.</p>
           </div>
-          <div class="card__text">
-            <p class="card__title">2D Graphs</p>
-            <p class="card__description">Generate smooth and accurate 2D graphs for functions and equations.</p>
+          <div class="hidden sm:flex w-1/3 aspect-square bg-primary-container rounded-lg items-center justify-center">
+            <span class="material-symbols-outlined text-mint-accent" style="font-size: 64px; font-variation-settings: 'FILL' 1;">view_in_ar</span>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 04 -->
-    <div class="card-effect">
-      <div class="card-inner">
-        <div class="card__liquid"></div>
-        <div class="card__shine"></div>
-        <div class="card__glow"></div>
-
-        <div class="card__content">
-          <div class="card__badge">FEATURE</div>
-          <div class="card__image" style="--icon-color:#60a5fa;">
-            <span class="card-icon">🌐</span>
-          </div>
-          <div class="card__text">
-            <p class="card__title">3D Graphs</p>
-            <p class="card__description">Visualize complex functions in interactive and detailed 3D graphs.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- ========== FEATURES CARDS END ========== -->
-
-
-<!-- ========== TEAM SECTION START ========== -->
-<section class="team">
-  <h2 class="team-title">Meet Our Team</h2>
-    <p class="team-desc">Meet the passionate developers behind <strong>Derivium</strong>.  
-      We are a small but dedicated team, building futuristic tools to make 
-      calculus more interactive and accessible. </p>
-  <div class="team-container">
-    
-    <!-- Team Member 1 -->
-    <div class="team-card">
-      <img src="https://img.pikbest.com/illustration/20250521/geeky-boy-programmer-or-coder-cartoon-character-template_11725740.jpg!f305cw" alt="Team Member">
-      <h3>Maaz Ahmed</h3>
-      <p>Lead Developer</p>
-      <div class="social-icons">
-        <a href="#"><i class="ri-linkedin-fill"></i></a>
-        <a href="#"><i class="ri-github-fill"></i></a>
-        <a href="#"><i class="ri-discord-fill"></i></a>
-        <a href="#"><i class="ri-instagram-line"></i></a>
-      </div>
-    </div>
-
-    <!-- Team Member 2 -->
-    <div class="team-card">
-      <img src="https://static.vecteezy.com/system/resources/thumbnails/066/640/473/small/boy-developer-or-software-engineer-mascot-cartoon-character-template-vector.jpg" alt="Team Member">
-      <h3>Taha Hassan</h3>
-      <p>Lead Developer</p>
-      <div class="social-icons">
-        <a href="#"><i class="ri-linkedin-fill"></i></a>
-        <a href="#"><i class="ri-github-fill"></i></a>
-        <a href="#"><i class="ri-discord-fill"></i></a>
-        <a href="#"><i class="ri-instagram-line"></i></a>
-      </div>
-    </div>
-
-    <!-- Team Member 3 -->
-    <div class="team-card">
-      <img src="https://static.vecteezy.com/system/resources/previews/066/640/438/non_2x/geeky-boy-programmer-or-developer-cartoon-character-template-vector.jpg" alt="Team Member">
-      <h3>Ahsan Ali</h3>
-      <p>UI/UX Designer</p>
-      <div class="social-icons">
-        <a href="#"><i class="ri-linkedin-fill"></i></a>
-        <a href="#"><i class="ri-github-fill"></i></a>
-        <a href="#"><i class="ri-discord-fill"></i></a>
-        <a href="#"><i class="ri-instagram-line"></i></a>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- ========== TEAM SECTION END ========== -->
-
-<!-- ========== SUPPORTERS SECTION START ========== -->
- <section class="marquee-section">
-    <div class="marquee_header">Our Supporters</div>
-    
-    <div class="marquee">
-      <div class="marquee__inner line1">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/wolfram.com" alt="Wolfram" class="rounded">Wolfram Research</span>
-          <span><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png" alt="META">META</span>
-          <span><img src="https://p7.hiclipart.com/preview/8/502/432/google-logo-google-now-google-search-google-plus-thumbnail.jpg" alt="Google" class="rounded">Google</span>
-          <span><img src="https://toppng.com/uploads/preview/microsoft-logo-png-hd-11660471230b6nd5n6huh.png" alt="Microsoft">Microsoft</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line2">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/khanacademy.org" alt="Khan Academy" class="rounded">Khan Academy</span>
-          <span><img src="https://logo.clearbit.com/coursera.org" alt="Coursera">Coursera</span>
-          <span><img src="https://i.pinimg.com/736x/2a/62/c3/2a62c34e0d217a7aa14645ce114d84b3.jpg" alt="Open AI" class="rounded">Open AI</span>
-          <span><img src="https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg" alt="IBM">IBM</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line3">
-        <div class="marquee__group">
-           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLfQkHROu3_juWEJ0_sSnsw0hIGDtoKNwVKQ&s" alt="UBIT">UBIT</span>
-          <span><img src="https://substackcdn.com/image/fetch/$s_!G1lk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg" alt="Apple" class="rounded">Apple</span>
-           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocgnR9Y_Aq33mYH-oARaN0iIEEb96TllMTQ&s" alt="Kaggle" class="rounded">Kaggle</span>
-          <span><img src="https://m.media-amazon.com/images/I/61Aea4purkL._UF894,1000_QL80_.jpg" alt="Stanford">Stanford</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line4">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/udemy.com" alt="Udemy" class="rounded">Udemy</span>
-          <span><img src="https://logo.clearbit.com/maplesoft.com" alt="MapleSoft">MapleSoft</span>
-          <span><img src="https://logo.clearbit.com/sap.com" alt="SAP">SAP</span>
-          <span><img src="https://logo.clearbit.com/tableau.com" alt="Tableau">Tableau</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line5">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/desmos.com" alt="Desmos" class="rounded">Desmos</span>
-          <span><img src="https://logo.clearbit.com/sas.com" alt="SAS">SAS</span>
-          <span><img src="https://blog.adobe.com/en/publish/2020/05/28/media_1d87bf78b1ce19defbef0c7858b4df696215a4048.png?width=750&format=png&optimize=medium" alt="Adobe">Adobe</span>
-          <span><img src="https://cdn.discordapp.com/icons/1316298752734134323/d1ca85f01e187eca72de82cf141d9efc.png?size=160&amp;quality=lossless" alt="Bad Boy'z">Bad Boy'z</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line6">
-        <div class="marquee__group">
-          <span><img src="https://logo.clearbit.com/geogebra.org" alt="GeoGebra" class="rounded">GeoGebra</span>
-          <span><img src="https://logo.clearbit.com/oracle.com" alt="Oracle">Oracle</span>
-          <span><img src="https://logo.clearbit.com/duolingo.com" alt="Duolingo" class="rounded">Duolingo</span>
-          <span><img src="https://logo.clearbit.com/wiley.com" alt="Wiley">Wiley</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee">
-      <div class="marquee__inner line7">
-        <div class="marquee__group">
-          <span><img src="https://yt3.googleusercontent.com/wtghMyEvmRZ9OSYmFjCN2Hk_4NsENwd6Kmau6k7n0in73FBvyEWpu6W4jDn8MWstLDh11FE8=s900-c-k-c0x00ffffff-no-rj" alt="edX">edX</span>
-          <span><img src="https://logo.clearbit.com/mathworks.com" alt="MathWorks">MathWorks</span>
-           <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPW8v3fEXd2cAiPi5EmPK5Hf83FlA6UtNaXw&s" alt="Springer">Springer</span>
-          <span><img src="https://apk4free.net/wp-content/uploads/2024/05/brilliant.png" alt="Brilliant">Brilliant.org</span>
         </div>
       </div>
     </div>
   </section>
-<!-- ========== SUPPORTERS SECTION END ========== -->
 
-<!-- ========== FOOTER START ========== -->
-  <footer>
-    <!-- Logo + Tagline -->
-    <div class="footer-top">
-      <img src="/public/Derivium Logo.svg" alt="Derivium Logo" class="footer-logo">
-      <p class="footer-tagline">Powerful Calculations • Clean Visuals • Great Results</p>
-    </div>
-
-    <!-- Social Icons -->
-    <div class="footer-social">
-      <a href="https://github.com/TahaHassan-code/Derivium" target="_blank" class="social-btn github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-2.9.3-5.2-1.3-5.2-3.6
-          0-2 2.3-3.6 5.2-3.6 2.9-.3 5.2 1.3 5.2 3.6zm-33.8-10.8c-.7
-          2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2 3.6-2.9
-          6.5-2 2.9.7 4.9 2.9 4.2 4.9zm45.1-1.7c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
-          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm65.4
-          37.1c-8.1 0-14.6-6.2-14.6-14.6s6.5-14.6
-          14.6-14.6c8.1 0 14.6 6.2 14.6 14.6s-6.5 14.6-14.6
-          14.6zm82.8-44.2c-.7 2-3.6 2.9-6.5 2-2.9-.7-4.9-2.9-4.2-4.9.7-2
-          3.6-2.9 6.5-2 2.9.7 4.9 2.9 4.2 4.9zm37.1 6.9c-2.9.7-6.2-.7-6.9-3.3-.7-2.6
-          1.3-5.2 4.2-5.9 2.9-.7 6.2.7 6.9 3.3.6 2.6-1.3 5.2-4.2 5.9zm32.6-21.6c-2.9
-          0-5.2-2-5.2-4.9s2.3-4.9 5.2-4.9c2.9 0 5.2 2 5.2
-          4.9s-2.3 4.9-5.2 4.9zM248 8C111 8 0 119.1 0 256c0
-          110.9 71.7 205.1 171.3 238.4 12.8 2.3 17.4-5.5
-          17.4-12.2 0-6.2-.3-22.5-.3-44.2-70.1
-          15.2-84.9-33.9-84.9-33.9-11.6-29.6-28.4-37.4-28.4-37.4-23.2-15.9
-          1.7-15.6 1.7-15.6 25.8 1.7 39.4 26.5 39.4
-          26.5 22.9 39.4 59.8 28.1 74.4 21.5 2.3-16.5 8.8-28.1
-          16.2-34.7-55.9-6.2-114.6-28.1-114.6-124.9
-          0-27.4 9.7-49.9 25.8-67.5-2.6-6.2-11.2-31.3
-          2.6-65.1 0 0 21.2-6.8 69.1 26.1
-          20.3-5.5 41.7-8.4 63-8.4s42.7 2.9
-          63 8.4c47.9-33.2 69.1-26.1
-          69.1-26.1 13.8 33.9 5.2 58.9
-          2.6 65.1 16.2 17.7 25.8 40.1
-          25.8 67.5 0 97.1-59.1 118.4-115.5
-          124.6 9.1 7.8 17.1 23.2 17.1
-          47.1 0 34.1-.3 61.6-.3 69.8 0
-          6.8 4.6 14.6 17.4 12.2C424.3
-          461.1 496 366.9 496 256
-          496 119.1 385 8 248 8z"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- Bottom -->
-    <div class="footer-bottom">
-      <p >&copy; 2025 Derivium. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">Terms</a>
-        <a href="#">License</a>
-        <a href="#">Privacy</a>
-        <a href="#">About Us</a>
+  <!-- Team Section -->
+  <section class="py-xl px-gutter">
+    <div class="max-w-container-max mx-auto">
+      <h2 class="font-headline-lg text-headline-lg text-primary-container mb-xl text-center uppercase tracking-tight">MEET OUR TEAM</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+        <!-- Maaz Ahmed -->
+        <div class="text-center group">
+          <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-md border-4 border-surface shadow-md group-hover:border-mint-accent transition-colors duration-500 max-w-[200px] mx-auto flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 80px;">person</span>
+          </div>
+          <h4 class="font-headline-md text-headline-md text-primary-container uppercase">Maaz Ahmed</h4>
+          <p class="text-on-surface-variant font-label-sm text-label-sm tracking-widest uppercase">Lead Developer</p>
+        </div>
+        <!-- Taha Hassan -->
+        <div class="text-center group">
+          <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-md border-4 border-surface shadow-md group-hover:border-mint-accent transition-colors duration-500 max-w-[200px] mx-auto flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 80px;">person</span>
+          </div>
+          <h4 class="font-headline-md text-headline-md text-primary-container uppercase">Taha Hassan</h4>
+          <p class="text-on-surface-variant font-label-sm text-label-sm tracking-widest uppercase">Lead Developer</p>
+        </div>
+        <!-- Ahsan Ali -->
+        <div class="text-center group">
+          <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-md border-4 border-surface shadow-md group-hover:border-mint-accent transition-colors duration-500 max-w-[200px] mx-auto flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 80px;">person</span>
+          </div>
+          <h4 class="font-headline-md text-headline-md text-primary-container uppercase">Ahsan Ali</h4>
+          <p class="text-on-surface-variant font-label-sm text-label-sm tracking-widest uppercase">UI/UX Designer</p>
+        </div>
       </div>
     </div>
-  </footer>
-<!-- ========== FOOTER END ========== -->
+  </section>
 
-  <!-- ========== JAVSACRIPT CDN/SCRIPTS ========== -->
-  <script type="module" src="/src/assets/js/script.js"></script>
+  <!-- Supporters Section -->
+  <section class="py-xl bg-surface-container px-gutter">
+    <div class="max-w-container-max mx-auto text-center">
+      <p class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Trusted by leading institutions</p>
+      <div class="flex flex-wrap justify-center items-center gap-xl grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+        <div class="flex items-center gap-xs">
+          <span class="material-symbols-outlined text-4xl">architecture</span>
+          <span class="font-headline-md text-headline-md text-primary-container">ARCHITECH</span>
+        </div>
+        <div class="flex items-center gap-xs">
+          <span class="material-symbols-outlined text-4xl">rocket_launch</span>
+          <span class="font-headline-md text-headline-md text-primary-container">STELLAR</span>
+        </div>
+        <div class="flex items-center gap-xs">
+          <span class="material-symbols-outlined text-4xl">account_balance</span>
+          <span class="font-headline-md text-headline-md text-primary-container">GLOBALEDU</span>
+        </div>
+        <div class="flex items-center gap-xs">
+          <span class="material-symbols-outlined text-4xl">biotech</span>
+          <span class="font-headline-md text-headline-md text-primary-container">BIOSTAT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platinum Sponsor -->
+  <section class="py-lg bg-surface-container px-gutter">
+    <div class="max-w-container-max mx-auto text-center">
+      <p class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Platinum Sponsor</p>
+      <div class="flex flex-wrap justify-center items-center gap-xl grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+        <div class="flex items-center gap-xs">
+          <span class="font-headline-md text-headline-md text-primary-container">
+            <img src="/primorm.png" alt="" class="h-[1.3em] w-auto inline align-bottom">
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant">
+  <div class="w-full py-xl px-xl flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+    <div class="mb-md md:mb-0">
+      <div class="font-headline-md text-headline-md text-primary-container mb-xs">Derivium</div>
+      <p class="text-on-surface-variant font-body-md text-label-sm">© 2026 Derivium Mathematical Platform. All rights reserved.</p>
+    </div>
+    <div class="flex gap-md">
+      <a class="text-on-surface-variant hover:text-primary-container transition-all font-label-sm text-label-sm" href="#">About Us</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-all font-label-sm text-label-sm" href="/src/pages/contact.html">Contact</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-all font-label-sm text-label-sm" href="#">Privacy Policy</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-all font-label-sm text-label-sm" href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.raised-card').forEach(card => {
+    card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+    observer.observe(card);
+  });
+</script>
 </body>
 </html>
